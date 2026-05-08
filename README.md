@@ -19,9 +19,9 @@ App Store: ссылка появится после релиза.
 
 ## Поддержка
 
-Email: [t.a.ushnitsky@gmail.com](mailto:t.a.ushnitsky@gmail.com)
+Email: [itog.support@proton.me](mailto:itog.support@proton.me)
 
-Если нашли баг или у вас есть предложение — напишите на email или [откройте issue](https://github.com/timatsushnitsky/itog-site/issues).
+Если нашли баг или у вас есть предложение — напишите на email или [откройте issue](https://github.com/timatsusima/itog-site/issues).
 
 ## Документы
 
@@ -48,7 +48,7 @@ your device.
 
 ### Support
 
-Email: [t.a.ushnitsky@gmail.com](mailto:t.a.ushnitsky@gmail.com)
+Email: [itog.support@proton.me](mailto:itog.support@proton.me)
 
 ### Legal
 

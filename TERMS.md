@@ -90,4 +90,4 @@ Itog предоставляется «как есть» (`as is`). Мы стар
 
 ## 9. Контакты
 
-[t.a.ushnitsky@gmail.com](mailto:t.a.ushnitsky@gmail.com)
+[itog.support@proton.me](mailto:itog.support@proton.me)

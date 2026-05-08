@@ -93,4 +93,4 @@ Itog не предназначен для детей младше 13 лет.
 ## Контакты
 
 Вопросы и запросы по обработке данных — на email
-[t.a.ushnitsky@gmail.com](mailto:t.a.ushnitsky@gmail.com).
+[itog.support@proton.me](mailto:itog.support@proton.me).

@@ -4,7 +4,7 @@
 
 Если у вас вопрос, баг или предложение:
 
-📧 **Email:** [t.a.ushnitsky@gmail.com](mailto:t.a.ushnitsky@gmail.com)
+📧 **Email:** [itog.support@proton.me](mailto:itog.support@proton.me)
 
 Стараемся отвечать в течение 1–2 рабочих дней.
 
