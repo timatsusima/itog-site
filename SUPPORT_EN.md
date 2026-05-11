@@ -13,8 +13,8 @@ Any app that plays audio on your Mac: Zoom, Google Meet, Microsoft Teams, FaceTi
 **Is my audio uploaded to the cloud?**
 No. Transcription runs locally on your Mac via WhisperKit using Apple Neural Engine. Audio never leaves your device.
 
-**The AI summary requires internet — is that safe?**
-The transcript (text only, not audio) is sent to Anthropic's Claude API to generate the structured protocol. You can disable AI summarization in Settings to keep everything fully offline.
+**Does the AI summary send my data to the cloud?**
+By default, no. Itog generates meeting protocols locally through Ollama on your Mac — no data leaves your device. If you prefer a cloud AI provider, you can connect Anthropic Claude, OpenAI, or OpenRouter in Settings → AI Provider. In that case, only the transcript (text only, not audio) is sent to the chosen provider.
 
 **How do I export my notes?**
 Open History → select a meeting → click Export. Options include Markdown, PDF, Notion, and Telegram.
