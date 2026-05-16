@@ -1,0 +1,12 @@
+# Disable Jekyll's default Markdown processing — the .html files in this
+# branch are pure redirect stubs and must be served as-is. README.md is
+# kept as a human-readable note for anyone landing on the repo page.
+theme: null
+markdown: kramdown
+exclude:
+  - PRIVACY.md
+  - PRIVACY_EN.md
+  - TERMS.md
+  - TERMS_EN.md
+  - SUPPORT.md
+  - SUPPORT_EN.md

@@ -1,56 +1,16 @@
-# Itog — приватный AI-блокнот для встреч
+# itog-site (legacy)
 
-Itog записывает совещания на macOS и формирует протокол с участниками,
-темами и задачами. Транскрипция работает **локально** на вашем Mac через
-Apple Neural Engine — аудио никогда не покидает устройство.
+The Itog marketing site has moved to **[itogapp.com](https://itogapp.com/)**.
 
-## Возможности
+The HTML files on this branch are kept only as redirects for old links
+shipped in early App Store metadata and social media bios. The live
+source lives on the `master` branch and is hosted on Cloudflare Pages.
 
-- 🎙 Захват микрофона и системного звука (Zoom, Meet, Teams, FaceTime, любая платформа)
-- 🤖 Локальная транскрипция через WhisperKit или Parakeet TDT
-- 📝 5 шаблонов протоколов: Standard / Sales / Standup / 1-on-1 / Custom
-- 👥 Speaker diarization — реплики помечаются `[Я]` / `[Собеседник]`
-- 🔒 Скрытый режим — иконка прячется из menu bar, запись по ⌘⌥⇧R
-- ☁ iCloud-синхронизация (опционально), экспорт в Notion / Telegram / Markdown / PDF
+| Legacy URL | Now points to |
+|---|---|
+| `timatsusima.github.io/itog-site/` | [`itogapp.com/`](https://itogapp.com/) |
+| `…/PRIVACY.md` / `…/privacy.html` | [`itogapp.com/privacy`](https://itogapp.com/privacy) |
+| `…/TERMS.md` / `…/terms.html` | [`itogapp.com/terms`](https://itogapp.com/terms) |
+| `…/SUPPORT.md` / `…/support.html` | [`itogapp.com/support`](https://itogapp.com/support) |
 
-## Скачать
-
-App Store: ссылка появится после релиза.
-
-## Поддержка
-
-Email: [itog.support@proton.me](mailto:itog.support@proton.me)
-
-Если нашли баг или у вас есть предложение — напишите на email или [откройте issue](https://github.com/timatsusima/itog-site/issues).
-
-## Документы
-
-- [Политика конфиденциальности](PRIVACY.md)
-- [Пользовательское соглашение](TERMS.md)
-
----
-
-## Itog — private AI meeting notes (English)
-
-Itog records meetings on macOS and produces structured notes with
-attendees, topics, decisions and action items. Transcription runs
-**locally** on your Mac via Apple Neural Engine — audio never leaves
-your device.
-
-### Features
-
-- 🎙 Microphone + system audio capture (Zoom, Meet, Teams, FaceTime, any platform)
-- 🤖 Local transcription via WhisperKit or Parakeet TDT
-- 📝 5 note templates
-- 👥 Speaker diarization
-- 🔒 Stealth mode
-- ☁ Optional iCloud sync, export to Notion / Telegram / Markdown / PDF
-
-### Support
-
-Email: [itog.support@proton.me](mailto:itog.support@proton.me)
-
-### Legal
-
-- [Privacy Policy](PRIVACY.md)
-- [Terms of Service](TERMS.md)
+Source on `master`: <https://github.com/timatsusima/itog-site/tree/master>
