@@ -229,8 +229,18 @@
         <div class="key">
           <span>⌘</span><span>R</span>
         </div>
-        <div class="mock">
-          <img src="/assets/images/sources/tray-en.png" alt="">
+        <div class="mock mock-menubar">
+          <div class="mb-bar">
+            <span class="mb-app">Itog</span>
+            <span class="mb-spacer"></span>
+            <span class="mb-icon mb-mic" aria-hidden="true"></span>
+            <span class="mb-icon mb-wifi" aria-hidden="true"></span>
+            <span class="mb-time">1:24 PM</span>
+          </div>
+          <div class="mb-tooltip">
+            <span class="mb-dot"></span>
+            <span data-i18n="mock1.tip">Запись начнётся одним кликом</span>
+          </div>
         </div>
       </div>
 
@@ -241,8 +251,19 @@
         <div class="key">
           <span data-i18n="step2.kbd">WhisperKit · on-device</span>
         </div>
-        <div class="mock">
-          <img src="/assets/images/sources/recording-en.png" alt="">
+        <div class="mock mock-waveform">
+          <div class="wf-row">
+            <span class="wf-tag wf-me" data-i18n="mock2.me">[Я]</span>
+            <div class="wf-bars">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
+          <div class="wf-row">
+            <span class="wf-tag" data-i18n="mock2.them">[Собеседник]</span>
+            <div class="wf-bars alt">
+              <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -253,8 +274,11 @@
         <div class="key">
           <span>Notion</span><span>Telegram</span><span>.md</span>
         </div>
-        <div class="mock">
-          <img src="/assets/images/sources/history-en.png" alt="">
+        <div class="mock mock-protocol">
+          <div class="pr-row pr-h" data-i18n="mock3.h">Discovery call · 28 мин</div>
+          <div class="pr-row"><span class="pr-bul pr-done"></span><span data-i18n="mock3.r1">Решение: запустить пилот на 3 менеджера</span></div>
+          <div class="pr-row"><span class="pr-bul pr-done"></span><span data-i18n="mock3.r2">Задача: интеграция с CRM до пятницы</span></div>
+          <div class="pr-row"><span class="pr-bul"></span><span data-i18n="mock3.r3">Owner: Сергей · due 23 мая</span></div>
         </div>
       </div>
     </div>
@@ -651,6 +675,13 @@ window.I18N = {
     "step2.kbd":"WhisperKit · on-device",
     "step3.title":"AI-протокол готов к шарингу",
     "step3.text":"Решения, задачи, ключевые моменты. Экспорт в Notion, Telegram, Markdown — или скопируйте одной кнопкой.",
+    "mock1.tip":"Запись начнётся одним кликом",
+    "mock2.me":"[Я]",
+    "mock2.them":"[Собеседник]",
+    "mock3.h":"Discovery call · 28 мин",
+    "mock3.r1":"Решение: запустить пилот на 3 менеджера",
+    "mock3.r2":"Задача: интеграция с CRM до пятницы",
+    "mock3.r3":"Owner: Сергей · до 23 мая",
 
     "feat.eyebrow":"Возможности",
     "feat.title":"Тихий ассистент, который не мешает встрече.",
@@ -808,6 +839,13 @@ window.I18N = {
     "step2.kbd":"WhisperKit · on-device",
     "step3.title":"AI summary ready to share",
     "step3.text":"Decisions, action items, key moments. Export to Notion, Telegram, Markdown — or copy with one click.",
+    "mock1.tip":"One click starts the recording",
+    "mock2.me":"[Me]",
+    "mock2.them":"[Other]",
+    "mock3.h":"Discovery call · 28 min",
+    "mock3.r1":"Decision: pilot with 3 managers",
+    "mock3.r2":"Task: CRM integration by Friday",
+    "mock3.r3":"Owner: Sergey · due May 23",
 
     "feat.eyebrow":"Features",
     "feat.title":"A quiet assistant that doesn't disrupt the meeting.",
