@@ -11,5 +11,5 @@
 /TERMS_EN.md    /terms.html?lang=en    301
 /SUPPORT_EN.md  /support.html?lang=en  301
 
-# www → apex
-https://www.itogapp.com/*  https://itogapp.com/:splat  301!
+# www → apex is handled by a Cloudflare Bulk Redirect / Page Rule
+# on the zone (Cloudflare Pages disallows absolute URLs in _redirects).
