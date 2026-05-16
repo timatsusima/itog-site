@@ -1,0 +1,15 @@
+# Pretty URLs for legal/support pages
+/privacy        /privacy.html        200
+/terms          /terms.html          200
+/support        /support.html        200
+
+# Legacy markdown links (App Store Connect / GitHub) → new HTML pages
+/PRIVACY.md     /privacy.html        301
+/TERMS.md       /terms.html          301
+/SUPPORT.md     /support.html        301
+/PRIVACY_EN.md  /privacy.html?lang=en  301
+/TERMS_EN.md    /terms.html?lang=en    301
+/SUPPORT_EN.md  /support.html?lang=en  301
+
+# www → apex
+https://www.itogapp.com/*  https://itogapp.com/:splat  301!

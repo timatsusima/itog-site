@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Itog — Политика конфиденциальности</title>
+<meta name="description" content="Политика конфиденциальности Itog. Аудио и транскрипт не покидают ваш Mac.">
+<meta property="og:title" content="Itog — Privacy Policy">
+<meta property="og:description" content="Audio and transcripts stay on your Mac. Privacy policy for Itog.">
+<meta property="og:url" content="https://itogapp.com/privacy">
+<meta property="og:image" content="https://itogapp.com/assets/images/og.png">
+<meta name="theme-color" content="#F4F1EC">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://itogapp.com/privacy">
+<link rel="alternate" hreflang="ru" href="https://itogapp.com/privacy?lang=ru">
+<link rel="alternate" hreflang="en" href="https://itogapp.com/privacy?lang=en">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-row">
+    <a href="/" class="brand">
+      <span class="brand-mark">i</span>
+      <span>Itog</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#why" data-i18n="nav.why">Возможности</a>
+      <a href="/#how" data-i18n="nav.how">Как работает</a>
+      <a href="/#compare" data-i18n="nav.compare">Сравнение</a>
+      <a href="/#pricing" data-i18n="nav.price">Цена</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="tablist">
+        <button data-lang="ru" class="active">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a class="btn ghost" href="/">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 6H3M5.5 8.5L3 6l2.5-2.5"/></svg>
+        <span data-i18n="nav.back">На главную</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="legal-wrap">
+
+  <div data-lang-only="ru">
+    <div class="legal-eyebrow">Политика</div>
+    <h1>Политика конфиденциальности</h1>
+    <p class="updated">Последнее обновление: 7 мая 2026</p>
+
+    <p>Itog — приложение для macOS, которое локально записывает совещания и формирует протокол. Этот документ описывает, какие данные мы обрабатываем и куда они уходят.</p>
+
+    <div class="tldr">
+      <h3>Кратко (TL;DR)</h3>
+      <ul>
+        <li><strong>Аудио и транскрипт</strong> никогда не покидают ваш Mac. Запись хранится в локальном sandbox-контейнере приложения. Транскрипция запускается локально через <a href="https://github.com/argmaxinc/WhisperKit">WhisperKit</a> на Apple Neural Engine.</li>
+        <li><strong>Текст протокола</strong> (краткое резюме + action items) формируется выбранным вами провайдером: Anthropic, OpenAI, OpenRouter или локальная Ollama. В случае облачных провайдеров туда уходит <strong>только текст транскрипта</strong>, не аудио.</li>
+        <li>Ключи API хранятся локально в <code>UserDefaults</code> вашего пользователя.</li>
+        <li>Itog не использует аналитику, рекламные SDK и не отправляет ваши данные третьим сторонам сверх того, что вы явно настроили (Notion, Telegram, iCloud, RevenueCat).</li>
+      </ul>
+    </div>
+
+    <h2>Какие данные мы собираем</h2>
+    <p>Itog <strong>не собирает</strong> персональные данные на стороне разработчика.</p>
+    <p>В рантайме приложение работает со следующими локальными данными:</p>
+    <ul>
+      <li>Аудиозаписи встреч (WAV).</li>
+      <li>Транскрипты, сегментированные по говорящим (<code>[Я]</code> / <code>[Собеседник]</code>).</li>
+      <li>Сгенерированные протоколы в Markdown.</li>
+      <li>Метаданные встреч: дата, длительность.</li>
+      <li>Ваши настройки (выбор провайдера, шаблон протокола, флаги).</li>
+    </ul>
+    <p>Все эти данные хранятся <strong>только на вашем Mac</strong>, в sandbox-контейнере приложения (<code>~/Library/Containers/com.tima.itog/</code>) и в <code>UserDefaults</code>.</p>
+
+    <h2>Куда уходят данные</h2>
+
+    <h3>Локально (по умолчанию)</h3>
+    <ul>
+      <li><strong>Транскрипция</strong>: WhisperKit, на устройстве. Никаких сетевых запросов.</li>
+      <li><strong>Хранилище встреч</strong>: <code>UserDefaults</code> + WAV в sandbox-контейнере.</li>
+    </ul>
+
+    <h3>Опционально, по вашему выбору</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Сервис</th>
+          <th>Что отправляется</th>
+          <th>Когда</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Anthropic API</td><td>Текст транскрипта</td><td>Если выбран Claude как провайдер</td></tr>
+        <tr><td>OpenAI API</td><td>Текст транскрипта</td><td>Если выбран OpenAI как провайдер</td></tr>
+        <tr><td>OpenRouter API</td><td>Текст транскрипта</td><td>Если выбран OpenRouter как провайдер</td></tr>
+        <tr><td>Ollama (localhost)</td><td>Текст транскрипта</td><td>Если выбран Ollama (запросы не покидают Mac)</td></tr>
+        <tr><td>Notion API</td><td>Заголовок + блоки протокола</td><td>По вашему явному клику «Экспорт → Notion»</td></tr>
+        <tr><td>Telegram Bot API</td><td>Заголовок + протокол</td><td>По вашему явному клику «Экспорт → Telegram»</td></tr>
+        <tr><td>Apple iCloud (CloudKit)</td><td>Дата, длительность, транскрипт, протокол</td><td>Если включён тоггл «Синхронизация через iCloud»</td></tr>
+        <tr><td>RevenueCat</td><td>Анонимный пользовательский ID, статус подписки</td><td>Только если SDK сконфигурирован реальным API-ключом</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Аудиофайлы (WAV) не уходят никуда</strong>: ни в облако, ни в iCloud, ни в Notion. Только локально.</p>
+
+    <h2>Разрешения macOS</h2>
+    <p>Itog запрашивает следующие разрешения через стандартный TCC-механизм macOS:</p>
+    <ul>
+      <li><strong>Микрофон</strong> — для захвата вашего голоса.</li>
+      <li><strong>Запись экрана и системного звука</strong> — для захвата голоса собеседника через ScreenCaptureKit (видео-кадры мы получаем, но сразу отбрасываем — записываем только аудио).</li>
+      <li><strong>Уведомления</strong> — для нотификаций «Протокол готов» и «Itog обнаружил созвон».</li>
+    </ul>
+
+    <h2>Хранение и удаление</h2>
+    <p>Чтобы полностью удалить ваши данные:</p>
+    <ol>
+      <li>Откройте <code>~/Library/Containers/com.tima.itog/</code> и удалите всё.</li>
+      <li>Удалите <code>~/Library/Preferences/com.tima.itog.plist</code>.</li>
+      <li>Если включали iCloud-синхронизацию — Системные настройки → Apple ID → iCloud → Manage → Itog → Delete Data.</li>
+      <li>Удалите само приложение из <code>/Applications</code>.</li>
+    </ol>
+
+    <h2>Дети</h2>
+    <p>Itog не предназначен для детей младше 13 лет.</p>
+
+    <h2>Изменения</h2>
+    <p>При существенных изменениях этой политики мы обновим дату вверху документа и сообщим в release notes.</p>
+
+    <h2>Контакты</h2>
+    <p>Вопросы и запросы по обработке данных — на email <a href="mailto:itog.support@proton.me">itog.support@proton.me</a>.</p>
+  </div>
+
+  <div data-lang-only="en">
+    <div class="legal-eyebrow">Policy</div>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: May 7, 2026</p>
+
+    <p>Itog is designed with privacy as a core principle. Your meetings are recorded and processed locally on your Mac. Audio never leaves your device.</p>
+
+    <div class="tldr">
+      <h3>TL;DR</h3>
+      <ul>
+        <li><strong>Audio and transcripts</strong> never leave your Mac. Recordings live in the app's sandboxed container. Transcription runs locally via <a href="https://github.com/argmaxinc/WhisperKit">WhisperKit</a> on the Apple Neural Engine.</li>
+        <li><strong>Meeting summaries</strong> are generated by the AI provider you pick: Anthropic, OpenAI, OpenRouter or local Ollama. With cloud providers, only the transcript text (not audio) is sent.</li>
+        <li>API keys are stored locally in your user's <code>UserDefaults</code>.</li>
+        <li>Itog uses no analytics or ad SDKs and does not share your data with third parties beyond what you explicitly configure (Notion, Telegram, iCloud, RevenueCat).</li>
+      </ul>
+    </div>
+
+    <h2>What we collect</h2>
+    <p>Itog <strong>does not collect</strong> personal data on the developer side.</p>
+    <p>At runtime, the app works with the following local data:</p>
+    <ul>
+      <li>Audio recordings of meetings (WAV).</li>
+      <li>Transcripts segmented by speaker (<code>[Me]</code> / <code>[Other]</code>).</li>
+      <li>Generated meeting protocols in Markdown.</li>
+      <li>Meeting metadata: date, duration.</li>
+      <li>Your settings (provider choice, summary template, feature flags).</li>
+    </ul>
+    <p>All of this is stored <strong>on your Mac only</strong>, in the sandboxed container (<code>~/Library/Containers/com.tima.itog/</code>) and <code>UserDefaults</code>.</p>
+
+    <h2>Where data goes</h2>
+
+    <h3>Locally (by default)</h3>
+    <ul>
+      <li><strong>Transcription</strong>: WhisperKit, on-device. No network requests.</li>
+      <li><strong>Meeting storage</strong>: <code>UserDefaults</code> + WAV in the sandboxed container.</li>
+    </ul>
+
+    <h3>Optionally, at your choice</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>What gets sent</th>
+          <th>When</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Anthropic API</td><td>Transcript text</td><td>If Claude is selected as the provider</td></tr>
+        <tr><td>OpenAI API</td><td>Transcript text</td><td>If OpenAI is selected</td></tr>
+        <tr><td>OpenRouter API</td><td>Transcript text</td><td>If OpenRouter is selected</td></tr>
+        <tr><td>Ollama (localhost)</td><td>Transcript text</td><td>If Ollama is selected (requests stay on your Mac)</td></tr>
+        <tr><td>Notion API</td><td>Title + protocol blocks</td><td>On your explicit "Export → Notion" click</td></tr>
+        <tr><td>Telegram Bot API</td><td>Title + protocol</td><td>On your explicit "Export → Telegram" click</td></tr>
+        <tr><td>Apple iCloud (CloudKit)</td><td>Date, duration, transcript, summary</td><td>If "iCloud Sync" toggle is on</td></tr>
+        <tr><td>RevenueCat</td><td>Anonymous user ID, subscription status</td><td>Only if the SDK is configured with a real API key</td></tr>
+      </tbody>
+    </table>
+    <p><strong>Audio files (WAV) go nowhere</strong>: not to the cloud, not to iCloud, not to Notion. Local-only.</p>
+
+    <h2>macOS permissions</h2>
+    <p>Itog requests the following permissions via the standard macOS TCC mechanism:</p>
+    <ul>
+      <li><strong>Microphone</strong> — to capture your voice.</li>
+      <li><strong>Screen Recording &amp; System Audio</strong> — to capture the other party's voice via ScreenCaptureKit (we receive video frames but discard them immediately — only audio is stored).</li>
+      <li><strong>Notifications</strong> — for "Protocol ready" and "Itog detected a call" alerts.</li>
+    </ul>
+
+    <h2>Storage and deletion</h2>
+    <p>To fully delete your data:</p>
+    <ol>
+      <li>Open <code>~/Library/Containers/com.tima.itog/</code> and delete everything.</li>
+      <li>Delete <code>~/Library/Preferences/com.tima.itog.plist</code>.</li>
+      <li>If iCloud sync was enabled — System Settings → Apple ID → iCloud → Manage → Itog → Delete Data.</li>
+      <li>Remove the app from <code>/Applications</code>.</li>
+    </ol>
+
+    <h2>Children</h2>
+    <p>Itog is not directed at children under 13.</p>
+
+    <h2>Changes</h2>
+    <p>If we make material changes to this policy we will update the date at the top and note the change in release notes.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about data handling — email <a href="mailto:itog.support@proton.me">itog.support@proton.me</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="/" class="brand">
+          <span class="brand-mark">i</span>
+          <span>Itog</span>
+        </a>
+        <p data-i18n="foot.about">Менеджер протоколов встреч для macOS. Локальная транскрипция, без бота в звонке, работает офлайн.</p>
+      </div>
+      <div>
+        <h5 data-i18n="foot.product">Продукт</h5>
+        <a href="/#why" data-i18n="nav.why">Возможности</a>
+        <a href="/#how" data-i18n="nav.how">Как работает</a>
+        <a href="/#compare" data-i18n="nav.compare">Сравнение</a>
+        <a href="/#pricing" data-i18n="nav.price">Цена</a>
+      </div>
+      <div>
+        <h5 data-i18n="foot.legal">Правовое</h5>
+        <a href="/privacy" data-i18n="foot.privacy">Приватность</a>
+        <a href="/terms" data-i18n="foot.terms">Условия</a>
+        <a href="/support" data-i18n="foot.support">Поддержка</a>
+      </div>
+      <div>
+        <h5 data-i18n="foot.contact">Контакты</h5>
+        <a href="mailto:itog.support@proton.me">itog.support@proton.me</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Itog · made in 🇰🇿</span>
+      <span data-i18n="foot.tech">WhisperKit · ScreenCaptureKit · SwiftUI</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.I18N = {
+  ru: {
+    "nav.why":"Возможности", "nav.how":"Как работает", "nav.compare":"Сравнение",
+    "nav.faq":"FAQ", "nav.price":"Цена", "nav.back":"На главную",
+    "foot.about":"Менеджер протоколов встреч для macOS. Локальная транскрипция, без бота в звонке, работает офлайн.",
+    "foot.product":"Продукт", "foot.legal":"Правовое",
+    "foot.privacy":"Приватность", "foot.terms":"Условия", "foot.support":"Поддержка",
+    "foot.contact":"Контакты", "foot.tech":"WhisperKit · ScreenCaptureKit · SwiftUI"
+  },
+  en: {
+    "nav.why":"Features", "nav.how":"How it works", "nav.compare":"Compare",
+    "nav.faq":"FAQ", "nav.price":"Pricing", "nav.back":"Home",
+    "foot.about":"Meeting notes manager for macOS. Local transcription, no bot in your call, works offline.",
+    "foot.product":"Product", "foot.legal":"Legal",
+    "foot.privacy":"Privacy", "foot.terms":"Terms", "foot.support":"Support",
+    "foot.contact":"Contact", "foot.tech":"WhisperKit · ScreenCaptureKit · SwiftUI"
+  }
+};
+</script>
+<script src="/assets/i18n.js" defer></script>
+
+</body>
+</html>
