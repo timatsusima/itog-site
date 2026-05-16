@@ -1,15 +1,14 @@
-# Pretty URLs for legal/support pages
-/privacy        /privacy.html        200
-/terms          /terms.html          200
-/support        /support.html        200
+# Pretty URLs (/privacy, /terms, /support → /privacy.html, /terms.html, /support.html)
+# are handled automatically by Workers Static Assets html_handling=auto-trailing-slash.
+# No rule needed here; adding one creates a redirect loop with the built-in canonicalisation.
 
-# Legacy markdown links (App Store Connect / GitHub) → new HTML pages
-/PRIVACY.md     /privacy.html        301
-/TERMS.md       /terms.html          301
-/SUPPORT.md     /support.html        301
-/PRIVACY_EN.md  /privacy.html?lang=en  301
-/TERMS_EN.md    /terms.html?lang=en    301
-/SUPPORT_EN.md  /support.html?lang=en  301
+# Legacy markdown links (App Store Connect / GitHub README) → new clean URLs.
+/PRIVACY.md     /privacy        301
+/TERMS.md       /terms          301
+/SUPPORT.md     /support        301
+/PRIVACY_EN.md  /privacy?lang=en  301
+/TERMS_EN.md    /terms?lang=en    301
+/SUPPORT_EN.md  /support?lang=en  301
 
 # www → apex is handled by a Cloudflare Bulk Redirect / Page Rule
-# on the zone (Cloudflare Pages disallows absolute URLs in _redirects).
+# on the zone (absolute URLs are disallowed inside _redirects).
