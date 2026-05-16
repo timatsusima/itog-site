@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Itog — Поддержка</title>
+<meta name="description" content="Поддержка Itog. FAQ по настройке записи, экспорту, приватности и подписке.">
+<meta property="og:title" content="Itog — Support">
+<meta property="og:description" content="FAQ and contact for Itog macOS meeting notes app.">
+<meta property="og:url" content="https://itogapp.com/support">
+<meta property="og:image" content="https://itogapp.com/assets/images/og.png">
+<meta name="theme-color" content="#F4F1EC">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://itogapp.com/support">
+<link rel="alternate" hreflang="ru" href="https://itogapp.com/support?lang=ru">
+<link rel="alternate" hreflang="en" href="https://itogapp.com/support?lang=en">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-row">
+    <a href="/" class="brand">
+      <span class="brand-mark">i</span>
+      <span>Itog</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#why" data-i18n="nav.why">Возможности</a>
+      <a href="/#how" data-i18n="nav.how">Как работает</a>
+      <a href="/#compare" data-i18n="nav.compare">Сравнение</a>
+      <a href="/#pricing" data-i18n="nav.price">Цена</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="tablist">
+        <button data-lang="ru" class="active">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a class="btn ghost" href="/">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M9 6H3M5.5 8.5L3 6l2.5-2.5"/></svg>
+        <span data-i18n="nav.back">На главную</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="legal-wrap">
+
+  <div data-lang-only="ru">
+    <div class="legal-eyebrow">Поддержка</div>
+    <h1>Чем помочь?</h1>
+    <p class="updated">Отвечаем в течение 1–2 рабочих дней.</p>
+
+    <div class="tldr">
+      <h3>Связаться напрямую</h3>
+      <p><strong>Email:</strong> <a href="mailto:itog.support@proton.me">itog.support@proton.me</a></p>
+      <p>Опишите проблему, версию приложения (видно в <em>Settings → About</em>) и модель Mac. Если ошибка воспроизводится — приложите шаги.</p>
+    </div>
+
+    <h2>Частые вопросы</h2>
+
+    <h3>Как начать запись?</h3>
+    <p>Откройте Itog (иконка микрофона в строке меню рядом с часами) → нажмите «Start recording» или горячую клавишу <code>⌘R</code>. При первом запуске macOS попросит разрешения на микрофон и захват экрана — это нужно подтвердить.</p>
+
+    <h3>Itog не записывает звук собеседника, только мой голос</h3>
+    <p>Нужно разрешить <strong>Запись экрана и системного звука</strong>: <em>Системные настройки → Конфиденциальность и безопасность → Запись экрана и системного звука</em> → включить тоггл напротив Itog. Перезапустите приложение.</p>
+
+    <h3>Как работает запись офлайн-встреч (без Zoom)?</h3>
+    <p>Включите запись и просто положите MacBook на стол. Используется встроенный микрофон. Для длинных встреч лучше внешний микрофон — качество транскрипции напрямую зависит от чистоты звука.</p>
+
+    <h3>Как экспортировать протокол в Notion?</h3>
+    <p>В <em>Settings → Integrations → Notion</em> вставьте свой Internal Integration Token и ID базы данных. После генерации протокола — кнопка «Экспорт → Notion» в окне встречи.</p>
+
+    <h3>Как экспортировать в Telegram?</h3>
+    <p>Создайте Telegram-бота через <a href="https://t.me/BotFather">@BotFather</a>, скопируйте токен в <em>Settings → Integrations → Telegram</em>, добавьте chat ID. После генерации — «Экспорт → Telegram».</p>
+
+    <h3>Какие данные уходят в облако?</h3>
+    <p>Аудио и текст транскрипта <strong>не уходят никуда</strong> сами по себе. В облако отправляется <strong>только текст</strong> и <strong>только</strong> когда вы явно нажимаете экспорт или используете cloud AI (Claude / OpenAI / OpenRouter) для генерации протокола. Подробности — на <a href="/privacy">странице приватности</a>.</p>
+
+    <h3>Какие LLM-провайдеры поддерживаются?</h3>
+    <p>Anthropic Claude, OpenAI, OpenRouter и локальная Ollama. Переключение в <em>Settings → AI Provider</em>. Свой API-ключ хранится локально в <code>UserDefaults</code>.</p>
+
+    <h3>Itog показывает «Whisper: загрузка модели…» очень долго</h3>
+    <p>При первом запуске модель Whisper <code>large-v3-turbo</code> (~600 МБ) скачивается с HuggingFace. На медленном интернете это может занять до 10 минут. Прогресс-бар в <em>Settings → Transcription</em> покажет реальную скорость.</p>
+
+    <h3>Транскрипция получилась плохая</h3>
+    <p>Проверьте: микрофон чистый, посторонних шумов нет, язык в настройках указан верно. Для русского и казахского лучше отдельно зафиксировать язык вместо авто-детекта.</p>
+
+    <h3>Подписка Pro не активируется</h3>
+    <p>После покупки откройте <em>Settings → Subscription</em> → нажмите «Восстановить покупки». Если не помогает — напишите на email с указанием Apple ID, на котором совершена покупка.</p>
+
+    <h3>Где хранятся записи?</h3>
+    <p>В sandbox-контейнере приложения: <code>~/Library/Containers/com.tima.itog/Data/Library/Application Support/Itog/Recordings/</code>. Все файлы остаются только на вашем Mac.</p>
+
+    <h3>Как полностью удалить данные?</h3>
+    <ol>
+      <li>Удалите Itog из <code>/Applications</code>.</li>
+      <li>Удалите <code>~/Library/Containers/com.tima.itog/</code>.</li>
+      <li>Если включали iCloud-синхронизацию: Системные настройки → Apple ID → iCloud → Manage → Itog → Delete Data.</li>
+      <li>Кэш моделей Whisper: <code>~/Documents/huggingface/models/argmaxinc/whisperkit-coreml/</code>.</li>
+    </ol>
+
+    <h3>Что делать, если транскрипция не запускается?</h3>
+    <p>Самые частые причины:</p>
+    <ul>
+      <li>Модель ещё не загрузилась (см. прогресс в Settings).</li>
+      <li>Mac на Intel — WhisperKit требует Apple Neural Engine, на Intel не работает.</li>
+      <li>Mac только что вышел из режима сна — после сна Apple Neural Engine может инициализироваться до 9 минут. Это нормально, дайте время.</li>
+    </ul>
+    <p>Если ничего не помогает — пришлите логи: <em>Settings → About → Copy diagnostics</em>.</p>
+
+    <hr>
+
+    <h2>Документы</h2>
+    <ul>
+      <li><a href="/privacy">Политика конфиденциальности</a></li>
+      <li><a href="/terms">Пользовательское соглашение</a></li>
+    </ul>
+  </div>
+
+  <div data-lang-only="en">
+    <div class="legal-eyebrow">Support</div>
+    <h1>How can we help?</h1>
+    <p class="updated">We reply within 1–2 business days.</p>
+
+    <div class="tldr">
+      <h3>Contact</h3>
+      <p><strong>Email:</strong> <a href="mailto:itog.support@proton.me">itog.support@proton.me</a></p>
+      <p>Describe the issue, app version (visible in <em>Settings → About</em>) and your Mac model. If it's reproducible, share the steps.</p>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+
+    <h3>How do I start recording?</h3>
+    <p>Open Itog (mic icon in the menu bar near the clock) → click "Start recording" or press <code>⌘R</code>. macOS will ask for microphone and screen recording permissions on first launch — confirm them.</p>
+
+    <h3>Itog doesn't capture the other party's voice, only mine</h3>
+    <p>You need to allow <strong>Screen Recording &amp; System Audio</strong>: <em>System Settings → Privacy &amp; Security → Screen Recording &amp; System Audio</em> → toggle Itog on. Then restart the app.</p>
+
+    <h3>How does in-person recording work (without Zoom)?</h3>
+    <p>Hit record and put your MacBook on the table. The built-in mic is used. For long meetings an external mic is preferable — transcription quality scales directly with audio clarity.</p>
+
+    <h3>How do I export to Notion?</h3>
+    <p>In <em>Settings → Integrations → Notion</em>, paste your Internal Integration Token and the target database ID. After a summary is generated, hit "Export → Notion" in the meeting window.</p>
+
+    <h3>How do I export to Telegram?</h3>
+    <p>Create a Telegram bot via <a href="https://t.me/BotFather">@BotFather</a>, paste the token in <em>Settings → Integrations → Telegram</em>, add your chat ID. After generation — "Export → Telegram".</p>
+
+    <h3>What data goes to the cloud?</h3>
+    <p>Audio and transcript text <strong>never leave</strong> your Mac on their own. Only <strong>text</strong> is sent to the cloud, and <strong>only</strong> when you explicitly click export or pick a cloud AI (Claude / OpenAI / OpenRouter) for summary generation. Full details on the <a href="/privacy">privacy page</a>.</p>
+
+    <h3>Which LLM providers are supported?</h3>
+    <p>Anthropic Claude, OpenAI, OpenRouter, and local Ollama. Switch in <em>Settings → AI Provider</em>. Your API key is stored locally in <code>UserDefaults</code>.</p>
+
+    <h3>Itog shows "Whisper: loading model…" for a long time</h3>
+    <p>On first launch the Whisper <code>large-v3-turbo</code> model (~600 MB) is downloaded from HuggingFace. On slow connections this can take up to 10 minutes. The progress bar in <em>Settings → Transcription</em> shows live speed.</p>
+
+    <h3>Transcription quality is poor</h3>
+    <p>Check: clean microphone, no background noise, correct language selected. For Russian or Kazakh, pinning the language explicitly beats auto-detect.</p>
+
+    <h3>Pro subscription doesn't activate</h3>
+    <p>Open <em>Settings → Subscription</em> → "Restore purchases". If that doesn't help, email us with the Apple ID used for the purchase.</p>
+
+    <h3>Where are recordings stored?</h3>
+    <p>In the app's sandboxed container: <code>~/Library/Containers/com.tima.itog/Data/Library/Application Support/Itog/Recordings/</code>. Files stay on your Mac.</p>
+
+    <h3>How do I fully delete my data?</h3>
+    <ol>
+      <li>Remove Itog from <code>/Applications</code>.</li>
+      <li>Delete <code>~/Library/Containers/com.tima.itog/</code>.</li>
+      <li>If iCloud sync was on: System Settings → Apple ID → iCloud → Manage → Itog → Delete Data.</li>
+      <li>Whisper model cache: <code>~/Documents/huggingface/models/argmaxinc/whisperkit-coreml/</code>.</li>
+    </ol>
+
+    <h3>What if transcription won't start?</h3>
+    <p>Most common reasons:</p>
+    <ul>
+      <li>Model still downloading (see progress in Settings).</li>
+      <li>Intel Mac — WhisperKit requires the Apple Neural Engine, Intel is unsupported.</li>
+      <li>Mac just woke from sleep — after sleep, ANE can take up to 9 minutes to initialize. This is normal; give it time.</li>
+    </ul>
+    <p>If nothing helps — send us the logs: <em>Settings → About → Copy diagnostics</em>.</p>
+
+    <hr>
+
+    <h2>Legal</h2>
+    <ul>
+      <li><a href="/privacy">Privacy Policy</a></li>
+      <li><a href="/terms">Terms of Service</a></li>
+    </ul>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="/" class="brand">
+          <span class="brand-mark">i</span>
+          <span>Itog</span>
+        </a>
+        <p data-i18n="foot.about">Менеджер протоколов встреч для macOS. Локальная транскрипция, без бота в звонке, работает офлайн.</p>
+      </div>
+      <div>
+        <h5 data-i18n="foot.product">Продукт</h5>
+        <a href="/#why" data-i18n="nav.why">Возможности</a>
+        <a href="/#how" data-i18n="nav.how">Как работает</a>
+        <a href="/#compare" data-i18n="nav.compare">Сравнение</a>
+        <a href="/#pricing" data-i18n="nav.price">Цена</a>
+      </div>
+      <div>
+        <h5 data-i18n="foot.legal">Правовое</h5>
+        <a href="/privacy" data-i18n="foot.privacy">Приватность</a>
+        <a href="/terms" data-i18n="foot.terms">Условия</a>
+        <a href="/support" data-i18n="foot.support">Поддержка</a>
+      </div>
+      <div>
+        <h5 data-i18n="foot.contact">Контакты</h5>
+        <a href="mailto:itog.support@proton.me">itog.support@proton.me</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Itog · made in 🇰🇿</span>
+      <span data-i18n="foot.tech">WhisperKit · ScreenCaptureKit · SwiftUI</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.I18N = {
+  ru: {
+    "nav.why":"Возможности", "nav.how":"Как работает", "nav.compare":"Сравнение",
+    "nav.faq":"FAQ", "nav.price":"Цена", "nav.back":"На главную",
+    "foot.about":"Менеджер протоколов встреч для macOS. Локальная транскрипция, без бота в звонке, работает офлайн.",
+    "foot.product":"Продукт", "foot.legal":"Правовое",
+    "foot.privacy":"Приватность", "foot.terms":"Условия", "foot.support":"Поддержка",
+    "foot.contact":"Контакты", "foot.tech":"WhisperKit · ScreenCaptureKit · SwiftUI"
+  },
+  en: {
+    "nav.why":"Features", "nav.how":"How it works", "nav.compare":"Compare",
+    "nav.faq":"FAQ", "nav.price":"Pricing", "nav.back":"Home",
+    "foot.about":"Meeting notes manager for macOS. Local transcription, no bot in your call, works offline.",
+    "foot.product":"Product", "foot.legal":"Legal",
+    "foot.privacy":"Privacy", "foot.terms":"Terms", "foot.support":"Support",
+    "foot.contact":"Contact", "foot.tech":"WhisperKit · ScreenCaptureKit · SwiftUI"
+  }
+};
+</script>
+<script src="/assets/i18n.js" defer></script>
+
+</body>
+</html>

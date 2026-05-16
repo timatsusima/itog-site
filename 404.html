@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Itog — 404</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F4F1EC">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-row">
+    <a href="/" class="brand">
+      <span class="brand-mark">i</span>
+      <span>Itog</span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-toggle" role="tablist">
+        <button data-lang="ru" class="active">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a class="btn primary" href="/">
+        <span data-i18n="nav.home">На главную</span>
+        <svg class="arr" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h6M6.5 3.5L9 6l-2.5 2.5"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="nf-wrap">
+  <div>
+    <p class="num">4<em>0</em>4</p>
+    <p data-i18n="nf.text">Этой страницы нет. Возможно ссылка устарела или была опечатка.</p>
+    <a href="/" class="btn primary">
+      <span data-i18n="nf.cta">Вернуться на главную</span>
+      <svg class="arr" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h6M6.5 3.5L9 6l-2.5 2.5"/></svg>
+    </a>
+  </div>
+</main>
+
+<script>
+window.I18N = {
+  ru: {
+    "nav.home":"На главную",
+    "nf.text":"Этой страницы нет. Возможно ссылка устарела или была опечатка.",
+    "nf.cta":"Вернуться на главную"
+  },
+  en: {
+    "nav.home":"Home",
+    "nf.text":"This page doesn't exist. The link may be outdated or had a typo.",
+    "nf.cta":"Go home"
+  }
+};
+</script>
+<script src="/assets/i18n.js" defer></script>
+
+</body>
+</html>

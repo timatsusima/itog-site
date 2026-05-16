@@ -1,56 +1,58 @@
-# Itog — приватный AI-блокнот для встреч
+# itog-site
 
-Itog записывает совещания на macOS и формирует протокол с участниками,
-темами и задачами. Транскрипция работает **локально** на вашем Mac через
-Apple Neural Engine — аудио никогда не покидает устройство.
+Маркетинговый сайт для приложения [Itog](https://itogapp.com) — AI meeting recorder для macOS.
 
-## Возможности
+Хостится на **Cloudflare Pages**. Домен: **itogapp.com**.
 
-- 🎙 Захват микрофона и системного звука (Zoom, Meet, Teams, FaceTime, любая платформа)
-- 🤖 Локальная транскрипция через WhisperKit или Parakeet TDT
-- 📝 5 шаблонов протоколов: Standard / Sales / Standup / 1-on-1 / Custom
-- 👥 Speaker diarization — реплики помечаются `[Я]` / `[Собеседник]`
-- 🔒 Скрытый режим — иконка прячется из menu bar, запись по ⌘⌥⇧R
-- ☁ iCloud-синхронизация (опционально), экспорт в Notion / Telegram / Markdown / PDF
+## Структура
 
-## Скачать
+```
+.
+├── index.html              # лендинг
+├── privacy.html            # политика конфиденциальности (RU/EN)
+├── terms.html              # пользовательское соглашение (RU/EN)
+├── support.html            # FAQ + контакт (RU/EN)
+├── 404.html
+├── assets/
+│   ├── styles.css          # общий CSS для всех страниц
+│   ├── i18n.js             # переключатель RU/EN через ?lang=
+│   ├── favicon.svg
+│   └── images/
+│       ├── og.png          # OpenGraph превью
+│       └── sources/        # скриншоты приложения
+├── _headers                # Cloudflare Pages: cache + security headers
+├── _redirects              # /privacy → /privacy.html, www → apex
+├── CNAME                   # itogapp.com (для совместимости)
+├── robots.txt
+└── sitemap.xml
+```
 
-App Store: ссылка появится после релиза.
+Никакого build-step нет — это статика, обслуживается Cloudflare Pages напрямую из репозитория.
 
-## Поддержка
+## Локальная разработка
 
-Email: [itog.support@proton.me](mailto:itog.support@proton.me)
+```bash
+python3 -m http.server 8000
+# открыть http://localhost:8000
+```
 
-Если нашли баг или у вас есть предложение — напишите на email или [откройте issue](https://github.com/timatsusima/itog-site/issues).
+Переключатель языка работает через URL-параметр: `?lang=ru` или `?lang=en`. По умолчанию — `ru`.
 
-## Документы
+## Деплой
 
-- [Политика конфиденциальности](PRIVACY.md)
-- [Пользовательское соглашение](TERMS.md)
+Cloudflare Pages автодеплоит при push в `master`:
 
----
+- **Build command**: пусто
+- **Build output directory**: `/`
+- **Custom domain**: `itogapp.com` (DNS в Cloudflare)
 
-## Itog — private AI meeting notes (English)
+После апрува App Store нужно:
 
-Itog records meetings on macOS and produces structured notes with
-attendees, topics, decisions and action items. Transcription runs
-**locally** on your Mac via Apple Neural Engine — audio never leaves
-your device.
+1. Открыть `index.html`, найти `id="app-store-cta"`.
+2. Заменить `href="#"` на реальную App Store ссылку.
+3. Удалить `aria-disabled="true"` (с обеих кнопок «Скачать» и «Начать триал»).
+4. Опционально: убрать `.hero-cta-note` с подписью «Скоро в Mac App Store».
 
-### Features
+## Контакт
 
-- 🎙 Microphone + system audio capture (Zoom, Meet, Teams, FaceTime, any platform)
-- 🤖 Local transcription via WhisperKit or Parakeet TDT
-- 📝 5 note templates
-- 👥 Speaker diarization
-- 🔒 Stealth mode
-- ☁ Optional iCloud sync, export to Notion / Telegram / Markdown / PDF
-
-### Support
-
-Email: [itog.support@proton.me](mailto:itog.support@proton.me)
-
-### Legal
-
-- [Privacy Policy](PRIVACY.md)
-- [Terms of Service](TERMS.md)
+`itog.support@proton.me`

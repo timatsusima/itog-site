@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Itog — Протоколы встреч. Без бота. Локально на Mac.</title>
+<meta name="description" content="Itog — приложение для macOS, которое автоматически ведёт протоколы встреч. Локальная транскрипция WhisperKit, без бота в звонке, работает офлайн.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Itog — Meeting notes. No bot. Local.">
+<meta property="og:description" content="macOS app that takes meeting notes locally with WhisperKit. No bot in the call, works offline.">
+<meta property="og:url" content="https://itogapp.com/">
+<meta property="og:image" content="https://itogapp.com/assets/images/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F1EC">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://itogapp.com/">
+<link rel="alternate" hreflang="ru" href="https://itogapp.com/?lang=ru">
+<link rel="alternate" hreflang="en" href="https://itogapp.com/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://itogapp.com/">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<!-- ─────  NAV  ───── -->
+<nav class="nav">
+  <div class="container nav-row">
+    <a href="/" class="brand">
+      <span class="brand-mark">i</span>
+      <span>Itog</span>
+    </a>
+    <div class="nav-links">
+      <a href="#why" data-i18n="nav.why">Возможности</a>
+      <a href="#how" data-i18n="nav.how">Как работает</a>
+      <a href="#compare" data-i18n="nav.compare">Сравнение</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#pricing" data-i18n="nav.price">Цена</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="tablist">
+        <button data-lang="ru" class="active">RU</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a class="btn primary" href="#pricing">
+        <span data-i18n="nav.cta">Скачать</span>
+        <svg class="arr" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h6M6.5 3.5L9 6l-2.5 2.5"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─────  HERO  ───── -->
+<header class="hero">
+  <div class="hero-grain"></div>
+  <div class="container hero-inner">
+    <div class="eyebrow">
+      <span class="pulse"></span>
+      <span data-i18n="hero.eyebrow">macOS · Apple Silicon · бесплатно 3 встречи в месяц</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1 class="hero-title" data-i18n="hero.title.html">Протоколы встреч.<br>Без бота. <em>Локально.</em></h1>
+        <p class="hero-sub" data-i18n="hero.sub">Itog слушает звонок в Zoom, Meet, Teams или живую встречу через микрофон MacBook. Транскрипция работает прямо на устройстве — через WhisperKit. Структурированный AI-протокол с решениями и задачами — за секунды.</p>
+        <div class="hero-cta">
+          <a href="#" class="btn lime" aria-disabled="true" id="app-store-cta">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm-.7 4.5a.5.5 0 011 0v4.6l1.7-1.7a.5.5 0 01.7.7l-2.5 2.5a.5.5 0 01-.7 0L4.9 8.1a.5.5 0 11.7-.7l1.7 1.7V4.5z"/></svg>
+            <span data-i18n="hero.cta.download">Скачать для macOS</span>
+          </a>
+          <a href="#how" class="btn ghost">
+            <span data-i18n="hero.cta.watch">Посмотреть как работает</span>
+            <svg class="arr" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h6M6.5 3.5L9 6l-2.5 2.5"/></svg>
+          </a>
+        </div>
+        <div class="hero-cta-note" data-i18n="hero.cta.note">Скоро в Mac App Store · присоединитесь к раннему списку через support email</div>
+        <div class="hero-fine">
+          <span data-i18n="hero.req1">macOS 14+</span>
+          <span class="dot"></span>
+          <span data-i18n="hero.req2">Apple Silicon (M1 и новее)</span>
+          <span class="dot"></span>
+          <span data-i18n="hero.req3">≈ 280 МБ + модель Whisper</span>
+        </div>
+      </div>
+
+      <div class="menubar-stage">
+        <div class="menubar-bar">
+          <div class="left">
+            <span class="mic">
+              <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="6" y="2" width="4" height="8" rx="2"/><path d="M3.5 7.5a4.5 4.5 0 009 0M8 12v2.5M5.5 14.5h5"/></svg>
+            </span>
+            <span>Itog</span>
+          </div>
+          <div class="right">
+            <span>1:24 PM</span>
+            <span style="opacity:.6">100%</span>
+            <svg class="ic" viewBox="0 0 16 16" fill="currentColor"><path d="M8 12.5l-3-3 .7-.7L8 11l2.3-2.2.7.7-3 3z"/></svg>
+          </div>
+        </div>
+
+        <div class="popover">
+          <div class="row recording">
+            <span class="dot"></span>
+            <span class="lbl" data-i18n="popover.start">Start recording</span>
+            <span class="kbd-keys"><span>⌘</span><span>R</span></span>
+          </div>
+          <div class="row muted">
+            <span class="sq"></span>
+            <span class="lbl" data-i18n="popover.stop">Stop recording</span>
+          </div>
+          <div class="sep"></div>
+          <div class="row">
+            <span>📋</span>
+            <span class="lbl" data-i18n="popover.history">Meeting history…</span>
+            <span class="kbd-keys"><span>⌘</span><span>H</span></span>
+          </div>
+          <div class="row">
+            <span class="lbl" data-i18n="popover.recent">Recent</span>
+            <span style="color:rgba(255,255,255,.45)">›</span>
+          </div>
+          <div class="sep"></div>
+          <div class="row muted">
+            <span style="color:#30D158">✓</span>
+            <span class="lbl">Whisper: ready</span>
+          </div>
+          <div class="sep"></div>
+          <div class="row pro">
+            <span class="star">★</span>
+            <span class="lbl" data-i18n="popover.pro">Itog Pro — 2 из 3 в этом месяце</span>
+          </div>
+          <div class="row">
+            <span class="lbl" data-i18n="popover.settings">Settings…</span>
+            <span class="kbd-keys"><span>⌘</span><span>,</span></span>
+          </div>
+        </div>
+
+        <div class="floating-tag ft-1">
+          <span class="d"></span><span data-i18n="hero.tag1">Без бота в звонке</span>
+        </div>
+        <div class="floating-tag ft-2">
+          <span class="d"></span><span data-i18n="hero.tag2">Аудио не покидает Mac</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─────  TRUST STRIP  ───── -->
+<div class="strip">
+  <div class="container strip-row">
+    <span class="item">
+      <span class="ic"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1.5L2 4v4c0 3.5 2.5 6.2 6 6.5 3.5-.3 6-3 6-6.5V4l-6-2.5z"/></svg></span>
+      <span data-i18n="strip.privacy">Локальная транскрипция</span>
+    </span>
+    <span class="item">
+      <span class="ic"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M2 12l4-4 3 3 5-5M9 4h4v4"/></svg></span>
+      <span data-i18n="strip.realtime">В реальном времени</span>
+    </span>
+    <span class="item">
+      <span class="ic"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c2 2.5 2 9.5 0 12M8 2c-2 2.5-2 9.5 0 12"/></svg></span>
+      <span data-i18n="strip.platforms">Zoom · Meet · Teams · Telegram · офлайн</span>
+    </span>
+    <span class="item">
+      <span class="ic"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="10" height="10" rx="2"/><path d="M6 6h4v4H6z"/></svg></span>
+      <span data-i18n="strip.providers">Claude · OpenAI · Ollama</span>
+    </span>
+  </div>
+</div>
+
+<!-- ─────  WHY DIFFERENT  ───── -->
+<section id="why">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow" data-i18n="why.eyebrow">Зачем не как Granola и Otter</div>
+      <h2 class="sec-title" data-i18n="why.title">Три принципа, на которых построен Itog.</h2>
+      <p class="sec-sub" data-i18n="why.sub">Популярные AI-рекордеры либо отправляют бота в звонок, либо хранят разговоры на своих серверах. Мы пошли другим путём.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar lime">
+        <div class="num">01</div>
+        <h3 data-i18n="pillar1.title">Приватность по умолчанию</h3>
+        <p data-i18n="pillar1.text">Транскрипция работает локально через WhisperKit. Аудио и текст разговора не покидают ваш Mac — ни байта на чужие серверы.</p>
+        <div class="vis">
+          <div class="vis-shield"></div>
+        </div>
+      </div>
+
+      <div class="pillar">
+        <div class="num">02</div>
+        <h3 data-i18n="pillar2.title">Без ботов в звонке</h3>
+        <p data-i18n="pillar2.text">Itog слушает через системное аудио вашего Mac. Участники не видят «Recorder joined» — никаких неудобных вопросов на чувствительных переговорах.</p>
+        <div class="vis">
+          <div class="vis-nobot">
+            <span class="face">YOU</span>
+            <span class="face">A.</span>
+            <span class="face">M.</span>
+            <span class="face bot">BOT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pillar dark">
+        <div class="num">03</div>
+        <h3 data-i18n="pillar3.title">Работает офлайн</h3>
+        <p data-i18n="pillar3.text">Кофе-встреча, интервью, мозговой штурм за столом — откройте MacBook и нажмите запись. Для транскрипции интернет не нужен.</p>
+        <div class="vis">
+          <div class="vis-offline" style="color:var(--lime)">
+            <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <span class="label" data-i18n="pillar3.label">RECORDING · OFFLINE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────  HOW IT WORKS  ───── -->
+<section id="how" style="background:linear-gradient(180deg, transparent, rgba(255,255,255,.4) 30%, rgba(255,255,255,.4) 70%, transparent);">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow" data-i18n="how.eyebrow">Как это работает</div>
+      <h2 class="sec-title" data-i18n="how.title">Один клик. Локальная транскрипция. Структурированный протокол.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="num">STEP 01</div>
+        <h3 data-i18n="step1.title">Нажмите запись в строке меню</h3>
+        <p data-i18n="step1.text">Itog живёт иконкой микрофона рядом с часами. Один клик — захват системного аудио или микрофона MacBook.</p>
+        <div class="key">
+          <span>⌘</span><span>R</span>
+        </div>
+        <div class="mock">
+          <img src="/assets/images/sources/tray-en.png" alt="">
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="num">STEP 02</div>
+        <h3 data-i18n="step2.title">Транскрипция идёт локально</h3>
+        <p data-i18n="step2.text">WhisperKit разбивает речь на спикеров и расшифровывает её прямо на чипе M1/M2/M3. Без отправки в облако.</p>
+        <div class="key">
+          <span data-i18n="step2.kbd">WhisperKit · on-device</span>
+        </div>
+        <div class="mock">
+          <img src="/assets/images/sources/recording-en.png" alt="">
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="num">STEP 03</div>
+        <h3 data-i18n="step3.title">AI-протокол готов к шарингу</h3>
+        <p data-i18n="step3.text">Решения, задачи, ключевые моменты. Экспорт в Notion, Telegram, Markdown — или скопируйте одной кнопкой.</p>
+        <div class="key">
+          <span>Notion</span><span>Telegram</span><span>.md</span>
+        </div>
+        <div class="mock">
+          <img src="/assets/images/sources/history-en.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────  FEATURE SHOWCASE  ───── -->
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow" data-i18n="feat.eyebrow">Возможности</div>
+      <h2 class="sec-title" data-i18n="feat.title">Тихий ассистент, который не мешает встрече.</h2>
+    </div>
+
+    <div class="showcase">
+      <div class="panel dark">
+        <div class="lbl">MEETING HISTORY</div>
+        <h3 data-i18n="show1.title">Протокол со структурой — не «расшифровка».</h3>
+        <p data-i18n="show1.text">Контекст клиента, боли, решения, задачи с исполнителями. Слушайте запись с подсветкой по таймкоду, копируйте раздел в один клик.</p>
+        <div class="vis">
+          <img src="/assets/images/sources/history-ru.png" alt="">
+        </div>
+      </div>
+
+      <div class="panel alt">
+        <div class="lbl">AI PROVIDER</div>
+        <h3 data-i18n="show2.title">Свой AI, свои правила.</h3>
+        <p data-i18n="show2.text">Подключите Claude, OpenAI, OpenRouter — или поднимите Ollama локально и работайте полностью без облака. Шаблоны протоколов настраиваются.</p>
+        <div class="vis">
+          <img src="/assets/images/sources/settings-ru.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="tile">
+        <h4 data-i18n="tile1.title">Разделение по спикерам</h4>
+        <p data-i18n="tile1.text">Кто что сказал — без ручной разметки. Диаризация работает локально.</p>
+        <div class="badges">
+          <span class="badge">on-device</span>
+          <span class="badge">WhisperKit</span>
+        </div>
+      </div>
+      <div class="tile">
+        <h4 data-i18n="tile2.title">Шаблоны протоколов</h4>
+        <p data-i18n="tile2.text">Discovery-звонок, интервью, ретро, 1:1, custom. Структура подстраивается под формат.</p>
+        <div class="badges">
+          <span class="badge" data-i18n="tile2.b1">5 пресетов</span>
+          <span class="badge">Markdown</span>
+        </div>
+      </div>
+      <div class="tile">
+        <h4 data-i18n="tile3.title">Экспорт без трения</h4>
+        <p data-i18n="tile3.text">Copy в Markdown, отправка в Notion, Telegram-бот, простой .txt. Никакого свежего «облака».</p>
+        <div class="badges">
+          <span class="badge">Notion</span>
+          <span class="badge">Telegram</span>
+          <span class="badge">.md / .txt</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────  COMPARISON  ───── -->
+<section id="compare">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-eyebrow" data-i18n="cmp.eyebrow">Сравнение</div>
+      <h2 class="sec-title" data-i18n="cmp.title">Itog vs Granola vs Otter — по приватности и охвату.</h2>
+      <p class="sec-sub" data-i18n="cmp.sub">Granola недавно подняли $1.5B, Otter — публичная компания. Оба хороши в облачных звонках. Itog оптимизирован под другой сценарий: чувствительные разговоры, офлайн и контроль над данными.</p>
+    </div>
+
+    <div class="compare-wrap">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th style="width:36%"><span data-i18n="cmp.col0">Что важно</span></th>
+            <th class="us">
+              <span>Itog</span>
+              <span class="sub" data-i18n="cmp.us.sub">macOS · локально</span>
+            </th>
+            <th>
+              <span>Granola</span>
+              <span class="sub" data-i18n="cmp.granola.sub">cloud · $1.5B оценка</span>
+            </th>
+            <th>
+              <span>Otter</span>
+              <span class="sub" data-i18n="cmp.otter.sub">cloud · публичная</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="label">
+              <span data-i18n="cmp.row1">Транскрипция на устройстве</span>
+              <span class="desc" data-i18n="cmp.row1.desc">Аудио и текст не уходят в облако</span>
+            </td>
+            <td class="us"><span class="cell yes"><span class="ic">✓</span><span class="txt" data-i18n="cmp.local.itog">WhisperKit, on-device</span></span></td>
+            <td><span class="cell no"><span class="ic">×</span><span class="txt" data-i18n="cmp.local.granola">Только облако</span></span></td>
+            <td><span class="cell no"><span class="ic">×</span><span class="txt" data-i18n="cmp.local.otter">Только облако</span></span></td>
+          </tr>
+          <tr>
+            <td class="label">
+              <span data-i18n="cmp.row2">Без бота в звонке</span>
+              <span class="desc" data-i18n="cmp.row2.desc">Участники не видят «Recorder joined»</span>
+            </td>
+            <td class="us"><span class="cell yes"><span class="ic">✓</span><span class="txt" data-i18n="cmp.bot.itog">Системное аудио</span></span></td>
+            <td><span class="cell yes"><span class="ic">✓</span><span class="txt" data-i18n="cmp.bot.granola">Системное аудио</span></span></td>
+            <td><span class="cell partial"><span class="ic">!</span><span class="txt" data-i18n="cmp.bot.otter">Отправляет Otter Pilot</span></span></td>
+          </tr>
+          <tr>
+            <td class="label">
+              <span data-i18n="cmp.row3">Личные встречи (офлайн)</span>
+              <span class="desc" data-i18n="cmp.row3.desc">Кофе, интервью, переговоры без интернета</span>
+            </td>
+            <td class="us"><span class="cell yes"><span class="ic">✓</span><span class="txt" data-i18n="cmp.off.itog">Полностью офлайн</span></span></td>
+            <td><span class="cell no"><span class="ic">×</span><span class="txt" data-i18n="cmp.off.granola">Нужен интернет</span></span></td>
+            <td><span class="cell partial"><span class="ic">!</span><span class="txt" data-i18n="cmp.off.otter">Запись да, AI — нет</span></span></td>
+          </tr>
+          <tr>
+            <td class="label">
+              <span data-i18n="cmp.row4">Локальная AI-обработка</span>
+              <span class="desc" data-i18n="cmp.row4.desc">Резюме строится без отправки в облако</span>
+            </td>
+            <td class="us"><span class="cell yes"><span class="ic">✓</span><span class="txt" data-i18n="cmp.ai.itog">Ollama (локально)</span></span></td>
+            <td><span class="cell no"><span class="ic">×</span><span class="txt" data-i18n="cmp.ai.granola">Только cloud</span></span></td>
+            <td><span class="cell no"><span class="ic">×</span><span class="txt" data-i18n="cmp.ai.otter">Только cloud</span></span></td>
+          </tr>
+          <tr>
+            <td class="label">
+              <span data-i18n="cmp.row5">Выбор AI-провайдера</span>
+              <span class="desc" data-i18n="cmp.row5.desc">Свой API-ключ Claude / OpenAI</span>
+            </td>
+            <td class="us"><span class="cell yes"><span class="ic">✓</span><span class="txt" data-i18n="cmp.prov.itog">Claude, OpenAI, OpenRouter, Ollama</span></span></td>
+            <td><span class="cell no"><span class="ic">×</span><span class="txt" data-i18n="cmp.prov.granola">Вшито в продукт</span></span></td>
+            <td><span class="cell no"><span class="ic">×</span><span class="txt" data-i18n="cmp.prov.otter">Вшито в продукт</span></span></td>
+          </tr>
+          <tr>
+            <td class="label">
+              <span data-i18n="cmp.row6">Платформы записи</span>
+              <span class="desc" data-i18n="cmp.row6.desc">Что можно протоколировать</span>
+            </td>
+            <td class="us"><span class="cell yes"><span class="ic">✓</span><span class="txt" data-i18n="cmp.plat.itog">Любая: Zoom, Meet, Teams, Telegram, телефон, оффлайн</span></span></td>
+            <td><span class="cell partial"><span class="ic">!</span><span class="txt" data-i18n="cmp.plat.granola">Только онлайн-звонки</span></span></td>
+            <td><span class="cell partial"><span class="ic">!</span><span class="txt" data-i18n="cmp.plat.otter">Только онлайн-звонки</span></span></td>
+          </tr>
+          <tr>
+            <td class="label">
+              <span data-i18n="cmp.row7">Где живут ваши данные</span>
+              <span class="desc" data-i18n="cmp.row7.desc">Кто имеет физический доступ к аудио</span>
+            </td>
+            <td class="us"><span class="cell yes"><span class="ic">✓</span><span class="txt" data-i18n="cmp.data.itog">Только ваш Mac</span></span></td>
+            <td><span class="cell no"><span class="ic">×</span><span class="txt" data-i18n="cmp.data.granola">Серверы Granola</span></span></td>
+            <td><span class="cell no"><span class="ic">×</span><span class="txt" data-i18n="cmp.data.otter">Серверы Otter</span></span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:18px; font-family:var(--mono); font-size:11px; color:var(--dim); text-align:right;" data-i18n="cmp.note">Данные конкурентов — по их публичной документации на дату публикации. Granola — May 2026.</p>
+  </div>
+</section>
+
+<!-- ─────  FAQ  ───── -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div>
+        <div class="sec-eyebrow" data-i18n="faq.eyebrow">FAQ</div>
+        <h2 class="sec-title" style="font-size:clamp(28px, 3.4vw, 44px)" data-i18n="faq.title">Часто спрашивают про точность, языки и железо.</h2>
+        <p class="sec-sub" style="margin-bottom:0">
+          <span data-i18n="faq.sub">Если ответа нет ниже — напишите </span><a href="mailto:itog.support@proton.me">itog.support@proton.me</a>.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq" open>
+          <summary>
+            <span class="q-num">01</span>
+            <span class="q-txt" data-i18n="faq.q1">Насколько точна транскрипция? Whisper же иногда галлюцинирует.</span>
+            <span class="chev"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 2v6M2 5h6"/></svg></span>
+          </summary>
+          <div class="a" data-i18n="faq.a1.html">
+            <p>Itog использует <code>WhisperKit</code> — оптимизированный под Apple Silicon билд от Argmax. На моделях <code>large-v3</code> и <code>large-v3-turbo</code> WER (Word Error Rate) на чистой записи — <strong>5–8%</strong> для английского и <strong>8–12%</strong> для русского. Это близко к облачным API.</p>
+            <p>Чтобы избежать «галлюцинаций» на тишине, мы режем VAD‑ом паузы &gt; 1.5 секунды и не пускаем их в декодер. Имена собственные и термины можно добавить в словарь.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="q-num">02</span>
+            <span class="q-txt" data-i18n="faq.q2">Какие языки поддерживаются? Что с казахским?</span>
+            <span class="chev"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 2v6M2 5h6"/></svg></span>
+          </summary>
+          <div class="a" data-i18n="faq.a2.html">
+            <p>Whisper-модели нативно поддерживают <strong>99 языков</strong>. Лучшее качество — английский, русский, немецкий, испанский, французский. Казахский, узбекский, киргизский — работают, но WER выше (15–22%).</p>
+            <p>Авто-детект языка включен по умолчанию. Если в встрече два языка (например, RU + EN), можно зафиксировать первичный — это ускоряет распознавание.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="q-num">03</span>
+            <span class="q-txt" data-i18n="faq.q3">Какие требования к Mac? M1 хватит?</span>
+            <span class="chev"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 2v6M2 5h6"/></svg></span>
+          </summary>
+          <div class="a" data-i18n="faq.a3.html">
+            <ul>
+              <li><strong>Минимум:</strong> Apple Silicon (M1 / M2 / M3 / M4), macOS 14 Sonoma, 8 ГБ RAM.</li>
+              <li><strong>Комфортно:</strong> M2 Pro / M3 / M4 с 16 ГБ RAM — модель large-v3 работает в реальном времени даже на длинных встречах.</li>
+              <li><strong>На Intel Mac не работает</strong> — WhisperKit использует Apple Neural Engine, которого там нет.</li>
+              <li>Модель Whisper качается один раз: <code>large-v3-turbo</code> — около 600 МБ.</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="q-num">04</span>
+            <span class="q-txt" data-i18n="faq.q4">Если транскрипция локальная, зачем нужен Claude / OpenAI?</span>
+            <span class="chev"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 2v6M2 5h6"/></svg></span>
+          </summary>
+          <div class="a" data-i18n="faq.a4.html">
+            <p>Whisper делает <em>расшифровку</em> — голос → текст. Для структурированного протокола (решения, задачи, тайминги) нужен LLM. Вы сами выбираете, кто его построит:</p>
+            <ul>
+              <li><strong>Cloud:</strong> Claude / OpenAI / OpenRouter — лучшее качество, ваш API-ключ, оплата по факту.</li>
+              <li><strong>Local:</strong> Ollama (llama3.2, qwen2.5) — медленнее, но 100% офлайн. Идеально для NDA‑встреч.</li>
+            </ul>
+            <p>Переключиться можно в любой момент в Settings → AI Provider.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="q-num">05</span>
+            <span class="q-txt" data-i18n="faq.q5">Как Itog слышит звонок без бота?</span>
+            <span class="chev"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 2v6M2 5h6"/></svg></span>
+          </summary>
+          <div class="a" data-i18n="faq.a5.html">
+            <p>Через ScreenCaptureKit — нативный API macOS 14+ для захвата системного аудио. Это тот же интерфейс, что использует macOS Screen Sharing. Itog слышит то же, что слышите вы из колонок MacBook. Никакие иконки в Zoom/Meet при этом не появляются.</p>
+            <p>Для офлайн-встреч используется обычный микрофон MacBook (или внешний по вашему выбору).</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="q-num">06</span>
+            <span class="q-txt" data-i18n="faq.q6">Чем отличается бесплатный план от Pro?</span>
+            <span class="chev"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 2v6M2 5h6"/></svg></span>
+          </summary>
+          <div class="a" data-i18n="faq.a6.html">
+            <p>На бесплатном плане — <strong>3 встречи в месяц</strong> и история за 7 дней. Pro — без лимитов, полная история, экспорт в Notion и Telegram, кастомные шаблоны протоколов, локальный Ollama. Транскрипция локальная — на обоих планах.</p>
+          </div>
+        </details>
+
+        <details class="faq">
+          <summary>
+            <span class="q-num">07</span>
+            <span class="q-txt" data-i18n="faq.q7">Что если я уже плачу за Granola или Otter?</span>
+            <span class="chev"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 2v6M2 5h6"/></svg></span>
+          </summary>
+          <div class="a" data-i18n="faq.a7.html">
+            <p>Запустите оба параллельно неделю — будет видно. Granola и Otter лучше для команд, которым важна шаринг-кнопка в Slack. Itog — для тех, у кого NDA, чувствительные клиенты, работа с офлайн‑встречами или просто принципиальная позиция «аудио не уходит в облако».</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────  PRICING  ───── -->
+<section id="pricing">
+  <div class="container">
+    <div class="pricing">
+      <div>
+        <div class="sec-eyebrow" style="color:rgba(255,255,255,.6)" data-i18n="price.eyebrow">Тариф</div>
+        <h2 data-i18n="price.title">Локальная транскрипция. Приватность встроена.</h2>
+        <p data-i18n="price.text">Установите Itog и попробуйте на трёх встречах бесплатно. Дальше — Pro по подписке, без скрытых лимитов и без передачи аудио наружу.</p>
+      </div>
+
+      <div class="price-card">
+        <span class="tag" data-i18n="price.tag">ITOG PRO</span>
+        <div class="num"><span data-i18n="price.amount">₸2 990</span><span class="per" data-i18n="price.per">/ месяц</span></div>
+        <div class="trial" data-i18n="price.trial">7 дней бесплатно · отмена в любой момент</div>
+        <ul>
+          <li data-i18n="price.f1">Неограниченные встречи</li>
+          <li data-i18n="price.f2">Полная история без срока</li>
+          <li data-i18n="price.f3">Экспорт в Notion, Telegram, .md</li>
+          <li data-i18n="price.f4">Кастомные шаблоны протоколов</li>
+          <li data-i18n="price.f5">Локальный Ollama (off-grid)</li>
+          <li data-i18n="price.f6">Аудио не покидает Mac</li>
+        </ul>
+        <div class="cta">
+          <a href="#" class="btn lime" aria-disabled="true">
+            <span data-i18n="price.cta">Начать 7-дневный триал</span>
+            <svg class="arr" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h6M6.5 3.5L9 6l-2.5 2.5"/></svg>
+          </a>
+          <span class="fine" data-i18n="price.fine">macOS 14+ · Apple Silicon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────  FOOTER  ───── -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="/" class="brand">
+          <span class="brand-mark">i</span>
+          <span>Itog</span>
+        </a>
+        <p data-i18n="foot.about">Менеджер протоколов встреч для macOS. Локальная транскрипция, без бота в звонке, работает офлайн.</p>
+      </div>
+      <div>
+        <h5 data-i18n="foot.product">Продукт</h5>
+        <a href="/#why" data-i18n="nav.why">Возможности</a>
+        <a href="/#how" data-i18n="nav.how">Как работает</a>
+        <a href="/#compare" data-i18n="nav.compare">Сравнение</a>
+        <a href="/#pricing" data-i18n="nav.price">Цена</a>
+      </div>
+      <div>
+        <h5 data-i18n="foot.legal">Правовое</h5>
+        <a href="/privacy" data-i18n="foot.privacy">Приватность</a>
+        <a href="/terms" data-i18n="foot.terms">Условия</a>
+        <a href="/support" data-i18n="foot.support">Поддержка</a>
+      </div>
+      <div>
+        <h5 data-i18n="foot.contact">Контакты</h5>
+        <a href="mailto:itog.support@proton.me">itog.support@proton.me</a>
+        <a href="https://github.com/timatsusima/itog-site" data-i18n="foot.github">Открытые материалы</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Itog · made in 🇰🇿</span>
+      <span data-i18n="foot.tech">WhisperKit · ScreenCaptureKit · SwiftUI</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.I18N = {
+  ru: {
+    "nav.why":"Возможности",
+    "nav.how":"Как работает",
+    "nav.compare":"Сравнение",
+    "nav.faq":"FAQ",
+    "nav.price":"Цена",
+    "nav.cta":"Скачать",
+
+    "hero.eyebrow":"macOS · Apple Silicon · бесплатно 3 встречи в месяц",
+    "hero.title.html":"Протоколы встреч.<br>Без бота. <em>Локально.</em>",
+    "hero.sub":"Itog слушает звонок в Zoom, Meet, Teams или живую встречу через микрофон MacBook. Транскрипция работает прямо на устройстве — через WhisperKit. Структурированный AI-протокол с решениями и задачами — за секунды.",
+    "hero.cta.download":"Скачать для macOS",
+    "hero.cta.watch":"Посмотреть как работает",
+    "hero.cta.note":"Скоро в Mac App Store — напишите на support, чтобы попасть в early-list.",
+    "hero.req1":"macOS 14+",
+    "hero.req2":"Apple Silicon (M1 и новее)",
+    "hero.req3":"≈ 280 МБ + модель Whisper",
+    "hero.tag1":"Без бота в звонке",
+    "hero.tag2":"Аудио не покидает Mac",
+
+    "popover.start":"Start recording",
+    "popover.stop":"Stop recording",
+    "popover.history":"Meeting history…",
+    "popover.recent":"Recent",
+    "popover.pro":"Itog Pro — 2 из 3 в этом месяце",
+    "popover.settings":"Settings…",
+
+    "strip.privacy":"Локальная транскрипция",
+    "strip.realtime":"В реальном времени",
+    "strip.platforms":"Zoom · Meet · Teams · Telegram · офлайн",
+    "strip.providers":"Claude · OpenAI · Ollama",
+
+    "why.eyebrow":"Зачем не как Granola и Otter",
+    "why.title":"Три принципа, на которых построен Itog.",
+    "why.sub":"Популярные AI-рекордеры либо отправляют бота в звонок, либо хранят разговоры на своих серверах. Мы пошли другим путём.",
+
+    "pillar1.title":"Приватность по умолчанию",
+    "pillar1.text":"Транскрипция работает локально через WhisperKit. Аудио и текст разговора не покидают ваш Mac — ни байта на чужие серверы.",
+    "pillar2.title":"Без ботов в звонке",
+    "pillar2.text":"Itog слушает через системное аудио вашего Mac. Участники не видят «Recorder joined» — никаких неудобных вопросов на чувствительных переговорах.",
+    "pillar3.title":"Работает офлайн",
+    "pillar3.text":"Кофе-встреча, интервью, мозговой штурм за столом — откройте MacBook и нажмите запись. Для транскрипции интернет не нужен.",
+    "pillar3.label":"RECORDING · OFFLINE",
+
+    "how.eyebrow":"Как это работает",
+    "how.title":"Один клик. Локальная транскрипция. Структурированный протокол.",
+    "step1.title":"Нажмите запись в строке меню",
+    "step1.text":"Itog живёт иконкой микрофона рядом с часами. Один клик — захват системного аудио или микрофона MacBook.",
+    "step2.title":"Транскрипция идёт локально",
+    "step2.text":"WhisperKit разбивает речь на спикеров и расшифровывает её прямо на чипе M1/M2/M3. Без отправки в облако.",
+    "step2.kbd":"WhisperKit · on-device",
+    "step3.title":"AI-протокол готов к шарингу",
+    "step3.text":"Решения, задачи, ключевые моменты. Экспорт в Notion, Telegram, Markdown — или скопируйте одной кнопкой.",
+
+    "feat.eyebrow":"Возможности",
+    "feat.title":"Тихий ассистент, который не мешает встрече.",
+    "show1.title":"Протокол со структурой — не «расшифровка».",
+    "show1.text":"Контекст клиента, боли, решения, задачи с исполнителями. Слушайте запись с подсветкой по таймкоду, копируйте раздел в один клик.",
+    "show2.title":"Свой AI, свои правила.",
+    "show2.text":"Подключите Claude, OpenAI, OpenRouter — или поднимите Ollama локально и работайте полностью без облака. Шаблоны протоколов настраиваются.",
+
+    "tile1.title":"Разделение по спикерам",
+    "tile1.text":"Кто что сказал — без ручной разметки. Диаризация работает локально.",
+    "tile2.title":"Шаблоны протоколов",
+    "tile2.text":"Discovery-звонок, интервью, ретро, 1:1, custom. Структура подстраивается под формат.",
+    "tile2.b1":"5 пресетов",
+    "tile3.title":"Экспорт без трения",
+    "tile3.text":"Copy в Markdown, отправка в Notion, Telegram-бот, простой .txt. Никакого свежего «облака».",
+
+    "cmp.eyebrow":"Сравнение",
+    "cmp.title":"Itog vs Granola vs Otter — по приватности и охвату.",
+    "cmp.sub":"Granola недавно подняли $1.5B, Otter — публичная компания. Оба хороши в облачных звонках. Itog оптимизирован под другой сценарий: чувствительные разговоры, офлайн и контроль над данными.",
+    "cmp.col0":"Что важно",
+    "cmp.us.sub":"macOS · локально",
+    "cmp.granola.sub":"cloud · $1.5B оценка",
+    "cmp.otter.sub":"cloud · публичная",
+    "cmp.row1":"Транскрипция на устройстве",
+    "cmp.row1.desc":"Аудио и текст не уходят в облако",
+    "cmp.local.itog":"WhisperKit, on-device",
+    "cmp.local.granola":"Только облако",
+    "cmp.local.otter":"Только облако",
+    "cmp.row2":"Без бота в звонке",
+    "cmp.row2.desc":"Участники не видят «Recorder joined»",
+    "cmp.bot.itog":"Системное аудио",
+    "cmp.bot.granola":"Системное аудио",
+    "cmp.bot.otter":"Отправляет Otter Pilot",
+    "cmp.row3":"Личные встречи (офлайн)",
+    "cmp.row3.desc":"Кофе, интервью, переговоры без интернета",
+    "cmp.off.itog":"Полностью офлайн",
+    "cmp.off.granola":"Нужен интернет",
+    "cmp.off.otter":"Запись да, AI — нет",
+    "cmp.row4":"Локальная AI-обработка",
+    "cmp.row4.desc":"Резюме строится без отправки в облако",
+    "cmp.ai.itog":"Ollama (локально)",
+    "cmp.ai.granola":"Только cloud",
+    "cmp.ai.otter":"Только cloud",
+    "cmp.row5":"Выбор AI-провайдера",
+    "cmp.row5.desc":"Свой API-ключ Claude / OpenAI",
+    "cmp.prov.itog":"Claude, OpenAI, OpenRouter, Ollama",
+    "cmp.prov.granola":"Вшито в продукт",
+    "cmp.prov.otter":"Вшито в продукт",
+    "cmp.row6":"Платформы записи",
+    "cmp.row6.desc":"Что можно протоколировать",
+    "cmp.plat.itog":"Любая: Zoom, Meet, Teams, Telegram, телефон, оффлайн",
+    "cmp.plat.granola":"Только онлайн-звонки",
+    "cmp.plat.otter":"Только онлайн-звонки",
+    "cmp.row7":"Где живут ваши данные",
+    "cmp.row7.desc":"Кто имеет физический доступ к аудио",
+    "cmp.data.itog":"Только ваш Mac",
+    "cmp.data.granola":"Серверы Granola",
+    "cmp.data.otter":"Серверы Otter",
+    "cmp.note":"Данные конкурентов — по их публичной документации на дату публикации. Granola — май 2026.",
+
+    "faq.eyebrow":"FAQ",
+    "faq.title":"Часто спрашивают про точность, языки и железо.",
+    "faq.sub":"Если ответа нет ниже — напишите ",
+    "faq.q1":"Насколько точна транскрипция? Whisper же иногда галлюцинирует.",
+    "faq.a1.html":"<p>Itog использует <code>WhisperKit</code> — оптимизированный под Apple Silicon билд от Argmax. На моделях <code>large-v3</code> и <code>large-v3-turbo</code> WER (Word Error Rate) на чистой записи — <strong>5–8%</strong> для английского и <strong>8–12%</strong> для русского. Это близко к облачным API.</p><p>Чтобы избежать «галлюцинаций» на тишине, мы режем VAD‑ом паузы &gt; 1.5 секунды и не пускаем их в декодер. Имена собственные и термины можно добавить в словарь.</p>",
+    "faq.q2":"Какие языки поддерживаются? Что с казахским?",
+    "faq.a2.html":"<p>Whisper-модели нативно поддерживают <strong>99 языков</strong>. Лучшее качество — английский, русский, немецкий, испанский, французский. Казахский, узбекский, киргизский — работают, но WER выше (15–22%).</p><p>Авто-детект языка включен по умолчанию. Если в встрече два языка (например, RU + EN), можно зафиксировать первичный — это ускоряет распознавание.</p>",
+    "faq.q3":"Какие требования к Mac? M1 хватит?",
+    "faq.a3.html":"<ul><li><strong>Минимум:</strong> Apple Silicon (M1 / M2 / M3 / M4), macOS 14 Sonoma, 8 ГБ RAM.</li><li><strong>Комфортно:</strong> M2 Pro / M3 / M4 с 16 ГБ RAM — модель large-v3 работает в реальном времени даже на длинных встречах.</li><li><strong>На Intel Mac не работает</strong> — WhisperKit использует Apple Neural Engine, которого там нет.</li><li>Модель Whisper качается один раз: <code>large-v3-turbo</code> — около 600 МБ.</li></ul>",
+    "faq.q4":"Если транскрипция локальная, зачем нужен Claude / OpenAI?",
+    "faq.a4.html":"<p>Whisper делает <em>расшифровку</em> — голос → текст. Для структурированного протокола (решения, задачи, тайминги) нужен LLM. Вы сами выбираете, кто его построит:</p><ul><li><strong>Cloud:</strong> Claude / OpenAI / OpenRouter — лучшее качество, ваш API-ключ, оплата по факту.</li><li><strong>Local:</strong> Ollama (llama3.2, qwen2.5) — медленнее, но 100% офлайн. Идеально для NDA‑встреч.</li></ul><p>Переключиться можно в любой момент в Settings → AI Provider.</p>",
+    "faq.q5":"Как Itog слышит звонок без бота?",
+    "faq.a5.html":"<p>Через ScreenCaptureKit — нативный API macOS 14+ для захвата системного аудио. Это тот же интерфейс, что использует macOS Screen Sharing. Itog слышит то же, что слышите вы из колонок MacBook. Никакие иконки в Zoom/Meet при этом не появляются.</p><p>Для офлайн-встреч используется обычный микрофон MacBook (или внешний по вашему выбору).</p>",
+    "faq.q6":"Чем отличается бесплатный план от Pro?",
+    "faq.a6.html":"<p>На бесплатном плане — <strong>3 встречи в месяц</strong> и история за 7 дней. Pro — без лимитов, полная история, экспорт в Notion и Telegram, кастомные шаблоны протоколов, локальный Ollama. Транскрипция локальная — на обоих планах.</p>",
+    "faq.q7":"Что если я уже плачу за Granola или Otter?",
+    "faq.a7.html":"<p>Запустите оба параллельно неделю — будет видно. Granola и Otter лучше для команд, которым важна шаринг-кнопка в Slack. Itog — для тех, у кого NDA, чувствительные клиенты, работа с офлайн‑встречами или просто принципиальная позиция «аудио не уходит в облако».</p>",
+
+    "price.eyebrow":"Тариф",
+    "price.title":"Локальная транскрипция. Приватность встроена.",
+    "price.text":"Установите Itog и попробуйте на трёх встречах бесплатно. Дальше — Pro по подписке, без скрытых лимитов и без передачи аудио наружу.",
+    "price.tag":"ITOG PRO",
+    "price.amount":"₸2 990",
+    "price.per":"/ месяц",
+    "price.trial":"7 дней бесплатно · отмена в любой момент",
+    "price.f1":"Неограниченные встречи",
+    "price.f2":"Полная история без срока",
+    "price.f3":"Экспорт в Notion, Telegram, .md",
+    "price.f4":"Кастомные шаблоны протоколов",
+    "price.f5":"Локальный Ollama (off-grid)",
+    "price.f6":"Аудио не покидает Mac",
+    "price.cta":"Начать 7-дневный триал",
+    "price.fine":"macOS 14+ · Apple Silicon",
+
+    "foot.about":"Менеджер протоколов встреч для macOS. Локальная транскрипция, без бота в звонке, работает офлайн.",
+    "foot.product":"Продукт",
+    "foot.legal":"Правовое",
+    "foot.privacy":"Приватность",
+    "foot.terms":"Условия",
+    "foot.support":"Поддержка",
+    "foot.contact":"Контакты",
+    "foot.github":"GitHub",
+    "foot.tech":"WhisperKit · ScreenCaptureKit · SwiftUI"
+  },
+  en: {
+    "nav.why":"Features",
+    "nav.how":"How it works",
+    "nav.compare":"Compare",
+    "nav.faq":"FAQ",
+    "nav.price":"Pricing",
+    "nav.cta":"Download",
+
+    "hero.eyebrow":"macOS · Apple Silicon · 3 free meetings per month",
+    "hero.title.html":"Meeting notes.<br>No bot. <em>Local.</em>",
+    "hero.sub":"Itog listens to your Zoom, Meet, Teams call — or an in-person meeting via your MacBook mic. Transcription runs on-device with WhisperKit. A structured AI summary with decisions and action items is ready in seconds.",
+    "hero.cta.download":"Download for macOS",
+    "hero.cta.watch":"See how it works",
+    "hero.cta.note":"Coming soon to the Mac App Store — email support to join the early list.",
+    "hero.req1":"macOS 14+",
+    "hero.req2":"Apple Silicon (M1 and newer)",
+    "hero.req3":"≈ 280 MB + Whisper model",
+    "hero.tag1":"No bot in your call",
+    "hero.tag2":"Audio never leaves your Mac",
+
+    "popover.start":"Start recording",
+    "popover.stop":"Stop recording",
+    "popover.history":"Meeting history…",
+    "popover.recent":"Recent",
+    "popover.pro":"Itog Pro — 2 of 3 left this month",
+    "popover.settings":"Settings…",
+
+    "strip.privacy":"Local transcription",
+    "strip.realtime":"Real-time",
+    "strip.platforms":"Zoom · Meet · Teams · Telegram · in-person",
+    "strip.providers":"Claude · OpenAI · Ollama",
+
+    "why.eyebrow":"Why not Granola or Otter",
+    "why.title":"Three principles Itog is built on.",
+    "why.sub":"Popular AI recorders either send a bot into your call or store your conversations on their servers. We took a different path.",
+
+    "pillar1.title":"Private by default",
+    "pillar1.text":"Transcription runs locally with WhisperKit. Audio and transcript never leave your Mac — not a single byte goes to a third-party server.",
+    "pillar2.title":"No bots in your calls",
+    "pillar2.text":"Itog listens through your Mac's system audio. Participants don't see \"Recorder joined\" — no awkward questions during sensitive conversations.",
+    "pillar3.title":"Works offline",
+    "pillar3.text":"Coffee chats, interviews, brainstorms — just open your MacBook and hit record. No internet needed for transcription.",
+    "pillar3.label":"RECORDING · OFFLINE",
+
+    "how.eyebrow":"How it works",
+    "how.title":"One click. Local transcription. Structured summary.",
+    "step1.title":"Hit record in the menu bar",
+    "step1.text":"Itog lives as a mic icon next to your clock. One click — captures system audio or your MacBook mic.",
+    "step2.title":"Transcription runs locally",
+    "step2.text":"WhisperKit splits speech by speaker and transcribes it directly on the M-series chip. Nothing goes to the cloud.",
+    "step2.kbd":"WhisperKit · on-device",
+    "step3.title":"AI summary ready to share",
+    "step3.text":"Decisions, action items, key moments. Export to Notion, Telegram, Markdown — or copy with one click.",
+
+    "feat.eyebrow":"Features",
+    "feat.title":"A quiet assistant that doesn't disrupt the meeting.",
+    "show1.title":"A structured summary, not a raw transcript.",
+    "show1.text":"Client context, pain points, decisions, action items with owners. Play back with timestamp highlights, copy any section in one click.",
+    "show2.title":"Your AI, your rules.",
+    "show2.text":"Plug in Claude, OpenAI, OpenRouter — or run Ollama locally and stay fully off-cloud. Summary templates are customisable.",
+
+    "tile1.title":"Speaker diarization",
+    "tile1.text":"Who said what — without manual labels. Diarization runs locally.",
+    "tile2.title":"Summary templates",
+    "tile2.text":"Discovery call, interview, retro, 1:1, custom. Structure adapts to the meeting type.",
+    "tile2.b1":"5 presets",
+    "tile3.title":"Frictionless export",
+    "tile3.text":"Copy as Markdown, push to Notion, Telegram bot, plain .txt. No yet-another-cloud.",
+
+    "cmp.eyebrow":"Compare",
+    "cmp.title":"Itog vs Granola vs Otter — privacy and coverage.",
+    "cmp.sub":"Granola just raised $1.5B. Otter is public. Both are great for cloud calls. Itog is optimised for a different scenario: sensitive conversations, in-person meetings, and full control over your data.",
+    "cmp.col0":"What matters",
+    "cmp.us.sub":"macOS · local",
+    "cmp.granola.sub":"cloud · $1.5B val.",
+    "cmp.otter.sub":"cloud · public co.",
+    "cmp.row1":"On-device transcription",
+    "cmp.row1.desc":"Audio and transcript never go to cloud",
+    "cmp.local.itog":"WhisperKit, on-device",
+    "cmp.local.granola":"Cloud only",
+    "cmp.local.otter":"Cloud only",
+    "cmp.row2":"No bot in your call",
+    "cmp.row2.desc":"Participants don't see \"Recorder joined\"",
+    "cmp.bot.itog":"System audio",
+    "cmp.bot.granola":"System audio",
+    "cmp.bot.otter":"Sends Otter Pilot",
+    "cmp.row3":"In-person meetings (offline)",
+    "cmp.row3.desc":"Coffee, interviews, in-room talks, no internet",
+    "cmp.off.itog":"Fully offline",
+    "cmp.off.granola":"Internet required",
+    "cmp.off.otter":"Records yes, AI no",
+    "cmp.row4":"Local AI processing",
+    "cmp.row4.desc":"Summary built without cloud",
+    "cmp.ai.itog":"Ollama (local)",
+    "cmp.ai.granola":"Cloud only",
+    "cmp.ai.otter":"Cloud only",
+    "cmp.row5":"Choose your AI provider",
+    "cmp.row5.desc":"Your own Claude / OpenAI key",
+    "cmp.prov.itog":"Claude, OpenAI, OpenRouter, Ollama",
+    "cmp.prov.granola":"Built-in only",
+    "cmp.prov.otter":"Built-in only",
+    "cmp.row6":"Recording platforms",
+    "cmp.row6.desc":"What you can capture",
+    "cmp.plat.itog":"Any: Zoom, Meet, Teams, Telegram, phone, offline",
+    "cmp.plat.granola":"Online calls only",
+    "cmp.plat.otter":"Online calls only",
+    "cmp.row7":"Where your data lives",
+    "cmp.row7.desc":"Who has physical access to the audio",
+    "cmp.data.itog":"Your Mac only",
+    "cmp.data.granola":"Granola servers",
+    "cmp.data.otter":"Otter servers",
+    "cmp.note":"Competitor data per their public docs as of publication. Granola — May 2026.",
+
+    "faq.eyebrow":"FAQ",
+    "faq.title":"Common questions on accuracy, languages and hardware.",
+    "faq.sub":"If the answer isn't below — drop us a line at ",
+    "faq.q1":"How accurate is the transcription? Whisper sometimes hallucinates.",
+    "faq.a1.html":"<p>Itog uses <code>WhisperKit</code> — an Apple Silicon-optimised build by Argmax. With <code>large-v3</code> and <code>large-v3-turbo</code> models, WER (Word Error Rate) on clean audio is <strong>5–8%</strong> for English and <strong>8–12%</strong> for Russian. That's on par with cloud APIs.</p><p>To avoid silence hallucinations, we trim &gt;1.5 sec pauses with VAD before they hit the decoder. Names and domain terms can be added to a custom dictionary.</p>",
+    "faq.q2":"Which languages are supported?",
+    "faq.a2.html":"<p>Whisper models natively cover <strong>99 languages</strong>. Highest quality — English, Russian, German, Spanish, French. Kazakh, Uzbek, Kyrgyz work but with higher WER (15–22%).</p><p>Language auto-detect is on by default. For bilingual meetings (e.g. RU + EN) you can pin the primary language to speed up recognition.</p>",
+    "faq.q3":"What are the hardware requirements? Is M1 enough?",
+    "faq.a3.html":"<ul><li><strong>Minimum:</strong> Apple Silicon (M1 / M2 / M3 / M4), macOS 14 Sonoma, 8 GB RAM.</li><li><strong>Comfortable:</strong> M2 Pro / M3 / M4 with 16 GB RAM — large-v3 runs in real-time even on long meetings.</li><li><strong>Intel Macs are not supported</strong> — WhisperKit needs the Apple Neural Engine.</li><li>Whisper model downloads once: <code>large-v3-turbo</code> — about 600 MB.</li></ul>",
+    "faq.q4":"If transcription is local, why do I need Claude / OpenAI?",
+    "faq.a4.html":"<p>Whisper does <em>speech-to-text</em>. For a structured summary (decisions, tasks, timing) you need an LLM. You pick who runs it:</p><ul><li><strong>Cloud:</strong> Claude / OpenAI / OpenRouter — best quality, your API key, pay-as-you-go.</li><li><strong>Local:</strong> Ollama (llama3.2, qwen2.5) — slower, but 100% offline. Perfect for NDA meetings.</li></ul><p>Switch any time in Settings → AI Provider.</p>",
+    "faq.q5":"How does Itog hear the call without a bot?",
+    "faq.a5.html":"<p>Through ScreenCaptureKit — the native macOS 14+ API for capturing system audio. It's the same interface macOS Screen Sharing uses. Itog hears what comes out of your MacBook's speakers. No icons appear in Zoom/Meet.</p><p>For in-person meetings the standard MacBook mic (or your external mic) is used.</p>",
+    "faq.q6":"What's the difference between Free and Pro?",
+    "faq.a6.html":"<p>Free — <strong>3 meetings per month</strong>, 7-day history. Pro — unlimited meetings, full history, export to Notion and Telegram, custom summary templates, local Ollama. Transcription is local on both plans.</p>",
+    "faq.q7":"What if I already pay for Granola or Otter?",
+    "faq.a7.html":"<p>Run them in parallel for a week — you'll see. Granola and Otter are great for teams who care about a Slack share button. Itog is for those with NDAs, sensitive clients, in-person meetings — or a principled \"audio doesn't leave my Mac\" stance.</p>",
+
+    "price.eyebrow":"Pricing",
+    "price.title":"Local transcription. Private by design.",
+    "price.text":"Install Itog and try it free on three meetings. After that — Pro subscription, no hidden caps, no audio leaving your Mac.",
+    "price.tag":"ITOG PRO",
+    "price.amount":"$5.99",
+    "price.per":"/ month",
+    "price.trial":"7 days free · cancel any time",
+    "price.f1":"Unlimited meetings",
+    "price.f2":"Full history, no time limit",
+    "price.f3":"Export to Notion, Telegram, .md",
+    "price.f4":"Custom summary templates",
+    "price.f5":"Local Ollama (off-grid)",
+    "price.f6":"Audio never leaves your Mac",
+    "price.cta":"Start 7-day trial",
+    "price.fine":"macOS 14+ · Apple Silicon",
+
+    "foot.about":"Meeting notes manager for macOS. Local transcription, no bot in your call, works offline.",
+    "foot.product":"Product",
+    "foot.legal":"Legal",
+    "foot.privacy":"Privacy",
+    "foot.terms":"Terms",
+    "foot.support":"Support",
+    "foot.contact":"Contact",
+    "foot.github":"GitHub",
+    "foot.tech":"WhisperKit · ScreenCaptureKit · SwiftUI"
+  }
+};
+</script>
+<script src="/assets/i18n.js" defer></script>
+
+</body>
+</html>
