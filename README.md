@@ -55,4 +55,4 @@ Cloudflare Pages автодеплоит при push в `master`:
 
 ## Контакт
 
-`itog.support@proton.me`
+`support@itogapp.com`
