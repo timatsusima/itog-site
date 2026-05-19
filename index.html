@@ -3,14 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Itog — Протоколы встреч. Без бота. Локально на Mac.</title>
-<meta name="description" content="Itog — приложение для macOS, которое автоматически ведёт протоколы встреч. Локальная транскрипция WhisperKit, без бота в звонке, работает офлайн.">
+<title>Itog — Протоколы совещаний с ИИ. Локально на Mac.</title>
+<meta name="description" content="Протоколы совещаний с ИИ для Mac. Локальная транскрипция WhisperKit, без бота в Zoom, Яндекс Телемост, МТС Линк, Meet, Teams. Работает офлайн. Бесплатно 3 встречи в месяц.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Itog — Meeting notes. No bot. Local.">
-<meta property="og:description" content="macOS app that takes meeting notes locally with WhisperKit. No bot in the call, works offline.">
+<meta property="og:title" content="Itog — Протоколы совещаний с ИИ. Локально на Mac.">
+<meta property="og:description" content="macOS-приложение для ИИ-протоколов встреч. Локальная транскрипция через WhisperKit, без бота в Zoom/Телемост/МТС Линк, работает офлайн.">
 <meta property="og:url" content="https://itogapp.com/">
 <meta property="og:image" content="https://itogapp.com/assets/images/og.png">
+<meta property="og:image:alt" content="Itog — скриншот протокола встречи с решениями и задачами">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Itog — Протоколы совещаний с ИИ. Локально на Mac.">
+<meta name="twitter:description" content="macOS-приложение для ИИ-протоколов встреч. Локальная транскрипция, без бота в звонке, работает офлайн.">
+<meta name="twitter:image" content="https://itogapp.com/assets/images/og.png">
+<meta name="twitter:image:alt" content="Itog — скриншот протокола встречи">
 <meta name="theme-color" content="#F4F1EC">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://itogapp.com/">
@@ -18,6 +25,123 @@
 <link rel="alternate" hreflang="en" href="https://itogapp.com/?lang=en">
 <link rel="alternate" hreflang="x-default" href="https://itogapp.com/">
 <link rel="stylesheet" href="/assets/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Itog",
+  "alternateName": "Itog — AI Meeting Recorder for Mac",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Meeting transcription",
+  "operatingSystem": "macOS 14",
+  "processorRequirements": "Apple Silicon (M1 or newer)",
+  "memoryRequirements": "8 GB RAM",
+  "softwareVersion": "1.0",
+  "fileSize": "280 MB",
+  "url": "https://itogapp.com/",
+  "image": "https://itogapp.com/assets/images/og.png",
+  "screenshot": [
+    "https://itogapp.com/assets/images/sources/history-ru.png",
+    "https://itogapp.com/assets/images/sources/settings-ru.png"
+  ],
+  "description": "macOS menu-bar app that records meetings, transcribes locally with WhisperKit on the Apple Neural Engine, and generates a structured AI summary with decisions and action items. No bot in the call. Audio never leaves your Mac. Works with Zoom, Google Meet, Microsoft Teams, Яндекс Телемост, МТС Линк, Telegram and in-person meetings.",
+  "inLanguage": ["ru", "en"],
+  "offers": {
+    "@type": "Offer",
+    "price": "5.99",
+    "priceCurrency": "USD",
+    "category": "subscription",
+    "availability": "https://schema.org/PreOrder"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Itog",
+    "url": "https://itogapp.com/",
+    "logo": "https://itogapp.com/assets/favicon.svg",
+    "email": "support@itogapp.com",
+    "foundingLocation": {
+      "@type": "Country",
+      "name": "Kazakhstan"
+    }
+  },
+  "featureList": [
+    "On-device transcription with WhisperKit",
+    "Speaker diarization",
+    "AI summary with decisions and action items",
+    "No bot in the call (ScreenCaptureKit system audio capture)",
+    "Works offline for in-person meetings",
+    "Supports Zoom, Google Meet, Microsoft Teams, Яндекс Телемост, МТС Линк, Telegram",
+    "Export to Notion, Telegram, Markdown",
+    "Choose your AI provider: Claude, OpenAI, OpenRouter or local Ollama"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Насколько точна транскрипция? Whisper же иногда галлюцинирует.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Itog использует WhisperKit — оптимизированный под Apple Silicon билд от Argmax. На моделях large-v3 и large-v3-turbo WER (Word Error Rate) на чистой записи — 5–8% для английского и 8–12% для русского. Это близко к облачным API. Чтобы избежать «галлюцинаций» на тишине, мы режем VAD-ом паузы более 1.5 секунды и не пускаем их в декодер."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие языки поддерживаются? Что с казахским?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whisper-модели нативно поддерживают 99 языков. Лучшее качество — английский, русский, немецкий, испанский, французский. Казахский, узбекский, киргизский — работают, но WER выше (15–22%). Авто-детект языка включен по умолчанию."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие требования к Mac? M1 хватит?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Минимум: Apple Silicon (M1/M2/M3/M4), macOS 14 Sonoma, 8 ГБ RAM. На Intel Mac не работает — WhisperKit использует Apple Neural Engine. Модель Whisper качается один раз — large-v3-turbo около 600 МБ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Если транскрипция локальная, зачем нужен Claude / OpenAI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Whisper делает расшифровку — голос в текст. Для структурированного протокола (решения, задачи, тайминги) нужен LLM. Вы выбираете: Claude / OpenAI / OpenRouter (облако) или Ollama (100% локально, для NDA-встреч)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как Itog слышит звонок без бота?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Через ScreenCaptureKit — нативный API macOS 14+ для захвата системного аудио. Это тот же интерфейс, что использует macOS Screen Sharing. Itog слышит то же, что слышите вы из колонок MacBook. Никакие иконки в Zoom, Яндекс Телемост, МТС Линк, Meet, Teams не появляются."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чем отличается бесплатный план от Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "На бесплатном плане — 3 встречи в месяц и история за 7 дней. Pro — без лимитов, полная история, экспорт в Notion и Telegram, кастомные шаблоны протоколов, локальный Ollama. Транскрипция локальная на обоих планах."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что если я уже плачу за Granola или Otter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Запустите оба параллельно неделю — будет видно. Granola и Otter лучше для команд, которым важна шаринг-кнопка в Slack. Itog — для тех, у кого NDA, чувствительные клиенты, работа с офлайн-встречами или принципиальная позиция «аудио не уходит в облако»."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -59,8 +183,8 @@
 
     <div class="hero-grid">
       <div>
-        <h1 class="hero-title" data-i18n="hero.title.html">Протоколы встреч.<br>Без бота. <em>Локально.</em></h1>
-        <p class="hero-sub" data-i18n="hero.sub">Itog слушает звонок в Zoom, Meet, Teams или живую встречу через микрофон MacBook. Транскрипция работает прямо на устройстве — через WhisperKit. Структурированный AI-протокол с решениями и задачами — за секунды.</p>
+        <h1 class="hero-title" data-i18n="hero.title.html">Протоколы совещаний с ИИ.<br>Без бота. <em>Локально на Mac.</em></h1>
+        <p class="hero-sub" data-i18n="hero.sub">Itog слушает звонок в Zoom, Яндекс Телемост, МТС Линк, Meet, Teams — или живую встречу через микрофон MacBook. Транскрипция работает прямо на устройстве через WhisperKit. Структурированный ИИ-протокол с решениями и задачами — за секунды.</p>
         <div class="hero-cta">
           <a href="mailto:support@itogapp.com?subject=Itog%20%E2%80%94%20notify%20me%20at%20launch&body=Hi%21%20Please%20add%20me%20to%20the%20launch%20list%20so%20I%20get%20the%20Mac%20App%20Store%20link%20on%20day%20one." class="btn lime" id="app-store-cta">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5a2 2 0 00-2 2v.5H4a1.5 1.5 0 00-1.5 1.5v7A1.5 1.5 0 004 14h8a1.5 1.5 0 001.5-1.5v-7A1.5 1.5 0 0012 4h-2v-.5a2 2 0 00-2-2zm-1 2a1 1 0 112 0V4H7v-.5zM4 5h8a.5.5 0 01.5.5V7h-9V5.5A.5.5 0 014 5zm-.5 3h9v4.5a.5.5 0 01-.5.5H4a.5.5 0 01-.5-.5V8z"/></svg>
@@ -159,7 +283,7 @@
     </span>
     <span class="item">
       <span class="ic"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6"/><path d="M2 8h12M8 2c2 2.5 2 9.5 0 12M8 2c-2 2.5-2 9.5 0 12"/></svg></span>
-      <span data-i18n="strip.platforms">Zoom · Meet · Teams · Telegram · офлайн</span>
+      <span data-i18n="strip.platforms">Zoom · Телемост · МТС Линк · Meet · Teams · Telegram · офлайн</span>
     </span>
     <span class="item">
       <span class="ic"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="10" height="10" rx="2"/><path d="M6 6h4v4H6z"/></svg></span>
@@ -425,7 +549,7 @@
               <span data-i18n="cmp.row6">Платформы записи</span>
               <span class="desc" data-i18n="cmp.row6.desc">Что можно протоколировать</span>
             </td>
-            <td class="us"><span class="cell yes"><span class="ic">✓</span><span class="txt" data-i18n="cmp.plat.itog">Любая: Zoom, Meet, Teams, Telegram, телефон, оффлайн</span></span></td>
+            <td class="us"><span class="cell yes"><span class="ic">✓</span><span class="txt" data-i18n="cmp.plat.itog">Любая: Zoom, Телемост, МТС Линк, Meet, Teams, Telegram, телефон, оффлайн</span></span></td>
             <td><span class="cell partial"><span class="ic">!</span><span class="txt" data-i18n="cmp.plat.granola">Только онлайн-звонки</span></span></td>
             <td><span class="cell partial"><span class="ic">!</span><span class="txt" data-i18n="cmp.plat.otter">Только онлайн-звонки</span></span></td>
           </tr>
@@ -521,7 +645,7 @@
             <span class="chev"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 2v6M2 5h6"/></svg></span>
           </summary>
           <div class="a" data-i18n="faq.a5.html">
-            <p>Через ScreenCaptureKit — нативный API macOS 14+ для захвата системного аудио. Это тот же интерфейс, что использует macOS Screen Sharing. Itog слышит то же, что слышите вы из колонок MacBook. Никакие иконки в Zoom/Meet при этом не появляются.</p>
+            <p>Через ScreenCaptureKit — нативный API macOS 14+ для захвата системного аудио. Это тот же интерфейс, что использует macOS Screen Sharing. Itog слышит то же, что слышите вы из колонок MacBook. Никакие иконки в Zoom, Яндекс Телемост, МТС Линк, Meet или Teams при этом не появляются.</p>
             <p>Для офлайн-встреч используется обычный микрофон MacBook (или внешний по вашему выбору).</p>
           </div>
         </details>
@@ -634,8 +758,8 @@ window.I18N = {
     "nav.cta":"Скачать",
 
     "hero.eyebrow":"macOS · Apple Silicon · бесплатно 3 встречи в месяц",
-    "hero.title.html":"Протоколы встреч.<br>Без бота. <em>Локально.</em>",
-    "hero.sub":"Itog слушает звонок в Zoom, Meet, Teams или живую встречу через микрофон MacBook. Транскрипция работает прямо на устройстве — через WhisperKit. Структурированный AI-протокол с решениями и задачами — за секунды.",
+    "hero.title.html":"Протоколы совещаний с ИИ.<br>Без бота. <em>Локально на Mac.</em>",
+    "hero.sub":"Itog слушает звонок в Zoom, Яндекс Телемост, МТС Линк, Meet, Teams — или живую встречу через микрофон MacBook. Транскрипция работает прямо на устройстве через WhisperKit. Структурированный ИИ-протокол с решениями и задачами — за секунды.",
     "hero.cta.download":"Скачать для macOS",
     "hero.cta.notify":"Уведомить о релизе",
     "hero.cta.watch":"Посмотреть как работает",
@@ -655,7 +779,7 @@ window.I18N = {
 
     "strip.privacy":"Локальная транскрипция",
     "strip.realtime":"В реальном времени",
-    "strip.platforms":"Zoom · Meet · Teams · Telegram · офлайн",
+    "strip.platforms":"Zoom · Телемост · МТС Линк · Meet · Teams · Telegram · офлайн",
     "strip.providers":"Claude · OpenAI · Ollama",
 
     "why.eyebrow":"Зачем не как Granola и Otter",
@@ -736,7 +860,7 @@ window.I18N = {
     "cmp.prov.otter":"Вшито в продукт",
     "cmp.row6":"Платформы записи",
     "cmp.row6.desc":"Что можно протоколировать",
-    "cmp.plat.itog":"Любая: Zoom, Meet, Teams, Telegram, телефон, оффлайн",
+    "cmp.plat.itog":"Любая: Zoom, Телемост, МТС Линк, Meet, Teams, Telegram, телефон, оффлайн",
     "cmp.plat.granola":"Только онлайн-звонки",
     "cmp.plat.otter":"Только онлайн-звонки",
     "cmp.row7":"Где живут ваши данные",
@@ -758,7 +882,7 @@ window.I18N = {
     "faq.q4":"Если транскрипция локальная, зачем нужен Claude / OpenAI?",
     "faq.a4.html":"<p>Whisper делает <em>расшифровку</em> — голос → текст. Для структурированного протокола (решения, задачи, тайминги) нужен LLM. Вы сами выбираете, кто его построит:</p><ul><li><strong>Cloud:</strong> Claude / OpenAI / OpenRouter — лучшее качество, ваш API-ключ, оплата по факту.</li><li><strong>Local:</strong> Ollama (llama3.2, qwen2.5) — медленнее, но 100% офлайн. Идеально для NDA‑встреч.</li></ul><p>Переключиться можно в любой момент в Settings → AI Provider.</p>",
     "faq.q5":"Как Itog слышит звонок без бота?",
-    "faq.a5.html":"<p>Через ScreenCaptureKit — нативный API macOS 14+ для захвата системного аудио. Это тот же интерфейс, что использует macOS Screen Sharing. Itog слышит то же, что слышите вы из колонок MacBook. Никакие иконки в Zoom/Meet при этом не появляются.</p><p>Для офлайн-встреч используется обычный микрофон MacBook (или внешний по вашему выбору).</p>",
+    "faq.a5.html":"<p>Через ScreenCaptureKit — нативный API macOS 14+ для захвата системного аудио. Это тот же интерфейс, что использует macOS Screen Sharing. Itog слышит то же, что слышите вы из колонок MacBook. Никакие иконки в Zoom, Яндекс Телемост, МТС Линк, Meet или Teams при этом не появляются.</p><p>Для офлайн-встреч используется обычный микрофон MacBook (или внешний по вашему выбору).</p>",
     "faq.q6":"Чем отличается бесплатный план от Pro?",
     "faq.a6.html":"<p>На бесплатном плане — <strong>3 встречи в месяц</strong> и история за 7 дней. Pro — без лимитов, полная история, экспорт в Notion и Telegram, кастомные шаблоны протоколов, локальный Ollama. Транскрипция локальная — на обоих планах.</p>",
     "faq.q7":"Что если я уже плачу за Granola или Otter?",
