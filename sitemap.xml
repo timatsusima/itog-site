@@ -5,6 +5,7 @@
     <loc>https://itogapp.com/</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://itogapp.com/?lang=ru"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://itogapp.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itogapp.com/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,6 +13,7 @@
     <loc>https://itogapp.com/privacy</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://itogapp.com/privacy?lang=ru"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://itogapp.com/privacy?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itogapp.com/privacy"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -19,6 +21,7 @@
     <loc>https://itogapp.com/terms</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://itogapp.com/terms?lang=ru"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://itogapp.com/terms?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itogapp.com/terms"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -26,6 +29,7 @@
     <loc>https://itogapp.com/support</loc>
     <xhtml:link rel="alternate" hreflang="ru" href="https://itogapp.com/support?lang=ru"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://itogapp.com/support?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itogapp.com/support"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

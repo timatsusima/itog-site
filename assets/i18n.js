@@ -30,6 +30,22 @@
     });
   }
 
+  function applyMeta(lang) {
+    const dict = window.I18N && window.I18N[lang];
+    if (!dict) return;
+    if (dict['meta.title']) document.title = dict['meta.title'];
+    const setMeta = (selector, key) => {
+      const m = document.querySelector(selector);
+      if (m && dict[key]) m.setAttribute('content', dict[key]);
+    };
+    setMeta('meta[name="description"]', 'meta.description');
+    setMeta('meta[property="og:title"]', 'meta.og.title');
+    setMeta('meta[property="og:description"]', 'meta.og.description');
+    setMeta('meta[property="og:locale"]', 'meta.og.locale');
+    setMeta('meta[name="twitter:title"]', 'meta.twitter.title');
+    setMeta('meta[name="twitter:description"]', 'meta.twitter.description');
+  }
+
   function applyToggleUi(lang) {
     document.querySelectorAll('.lang-toggle button[data-lang]').forEach((b) => {
       b.classList.toggle('active', b.dataset.lang === lang);
@@ -59,6 +75,7 @@
   function setLang(lang) {
     if (!SUPPORTED.includes(lang)) lang = DEFAULT_LANG;
     document.documentElement.lang = lang;
+    applyMeta(lang);
     applyKeys(lang);
     applyToggleUi(lang);
     applyInternalLinks(lang);
