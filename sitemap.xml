@@ -33,4 +33,18 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://itogapp.com/alternatives/granola</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://itogapp.com/alternatives/granola"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itogapp.com/alternatives/granola"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://itogapp.com/alternatives/otter</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://itogapp.com/alternatives/otter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://itogapp.com/alternatives/otter"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

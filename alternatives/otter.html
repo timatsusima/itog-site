@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Otter.ai Alternative for Mac — Local & Bot-Free | Itog</title>
+<meta name="description" content="Itog is the privacy-first Otter.ai alternative for macOS. Whisper runs locally on Apple Silicon — no cloud, no bot in your call, no subscription lock-in. Free trial.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Otter.ai Alternative for Mac — Local & Bot-Free | Itog">
+<meta property="og:description" content="Switching from Otter? Itog records meetings on your Mac locally. No Otter Pilot joining the call, no audio in the cloud, no per-seat pricing.">
+<meta property="og:url" content="https://itogapp.com/alternatives/otter">
+<meta property="og:image" content="https://itogapp.com/assets/images/og.png">
+<meta property="og:image:alt" content="Itog — local AI meeting notes for Mac, a privacy-first Otter.ai alternative">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Otter.ai Alternative for Mac — Local & Bot-Free | Itog">
+<meta name="twitter:description" content="Whisper runs on your Mac. No bot in your call. No cloud. No lock-in.">
+<meta name="twitter:image" content="https://itogapp.com/assets/images/og.png">
+<meta name="theme-color" content="#F4F1EC">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://itogapp.com/alternatives/otter">
+<link rel="alternate" hreflang="en" href="https://itogapp.com/alternatives/otter">
+<link rel="alternate" hreflang="x-default" href="https://itogapp.com/alternatives/otter">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Otter.ai Alternative for Mac — Local & Bot-Free",
+  "description": "A detailed comparison between Otter.ai and Itog — a macOS-native, on-device meeting transcription app. Covers privacy, bot-in-call behavior, pricing, and migration.",
+  "url": "https://itogapp.com/alternatives/otter",
+  "image": "https://itogapp.com/assets/images/og.png",
+  "datePublished": "2026-05-20",
+  "dateModified": "2026-05-20",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "Itog",
+    "url": "https://itogapp.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Itog",
+    "url": "https://itogapp.com/",
+    "logo": "https://itogapp.com/assets/favicon.svg"
+  },
+  "about": [
+    { "@type": "SoftwareApplication", "name": "Otter.ai", "url": "https://otter.ai/" },
+    { "@type": "SoftwareApplication", "name": "Itog", "url": "https://itogapp.com/" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does Itog send a bot to my meeting like Otter Pilot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Otter Pilot is a visible participant in Zoom/Meet/Teams — others see 'Otter is recording.' Itog captures system audio silently via ScreenCaptureKit on your Mac. No participant icons, no notification, no awkward 'why is Otter here' questions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Otter's transcription more accurate than Whisper in Itog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On English, both are competitive: Otter ~5% WER, Itog with Whisper large-v3-turbo ~5-8% WER on clean audio. On Russian, Spanish, French, German — Whisper is often better than Otter. Otter is strongest on US-English with native speakers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use Itog for sales calls like Otter for Sales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Itog gives you a structured summary with decisions and action items per meeting, exportable to Notion or Telegram. It doesn't have CRM integrations (Salesforce, HubSpot) or sales-specific scoring like Otter's Sales tier. For a solo seller or a small team that lives in Notion — Itog covers the workflow. For 50-seat sales orgs with Salesforce integration — Otter is purpose-built for that."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about pricing — Otter is $16.99/mo, Itog is $5.99/mo. Catch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Otter's price includes their cloud transcription, summary, storage, and team features. Itog's $5.99 includes local transcription and the app — for the AI summary you bring your own Claude/OpenAI key (typical solo usage: $2-5/month) or run Ollama free locally. So the real comparison is Otter $16.99 vs Itog $8-11 with cloud LLM, or $5.99 with local Ollama."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Itog work with Zoom, Google Meet, Microsoft Teams?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — Itog captures system audio, so any meeting app on your Mac works: Zoom, Google Meet, Microsoft Teams, Webex, Telegram calls, Discord, FaceTime. No per-platform integration needed. Also works for in-person meetings via the MacBook microphone."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-row">
+    <a href="/" class="brand">
+      <span class="brand-mark">i</span>
+      <span>Itog</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#why">Features</a>
+      <a href="/#how">How it works</a>
+      <a href="/#compare">Compare</a>
+      <a href="/#pricing">Pricing</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn primary" href="/#pricing">
+        <span>Try Itog</span>
+        <svg class="arr" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h6M6.5 3.5L9 6l-2.5 2.5"/></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main class="legal-wrap">
+
+  <div class="legal-eyebrow">Alternatives · Otter.ai</div>
+  <h1>Otter.ai Alternative for Mac — Local &amp; Bot-Free</h1>
+  <p class="updated">Last updated: May 20, 2026</p>
+
+  <p>Otter.ai pioneered AI meeting notes for the SaaS world and runs a public company at over $100M ARR. It's a category-defining product. But it was built for a different shape of user than Itog targets — and if you're here, that shape probably doesn't fit you. This page is a precise, unspun comparison between <strong>Itog</strong> (on-device, macOS-only) and <strong>Otter.ai</strong> across the things that matter.</p>
+
+  <div class="tldr">
+    <h3>TL;DR — when each one wins</h3>
+    <ul>
+      <li><strong>Pick Itog</strong> if "Otter Pilot joined the meeting" makes your clients uncomfortable, if you have NDAs or regulated client work, if you take meetings offline, or if Otter's $16.99/mo is too much for solo use.</li>
+      <li><strong>Pick Otter</strong> if you're a sales org with Salesforce/HubSpot integrations, if you need real-time captions during the call, or if you transcribe primarily in US English.</li>
+      <li><strong>Pick something else</strong> if you need cross-platform (Windows + Mac → consider Fathom or Meetily) or strong team admin (→ Fellow, Fathom).</li>
+    </ul>
+  </div>
+
+  <h2>Why people look for an Otter.ai alternative</h2>
+  <p>Based on app reviews, Reddit threads, and direct user research in 2025-2026, the most common reasons are:</p>
+  <ol>
+    <li><strong>"Otter Pilot is in the call."</strong> Otter's default for Zoom/Meet/Teams is to send a participant bot that joins the meeting. Others see it. For high-trust client work, NDA conversations, or anything sensitive, this is friction.</li>
+    <li><strong>Audio in the cloud.</strong> Recordings live on Otter's infrastructure. For lawyers, doctors, therapists, journalists with sources — that's a compliance problem, not a feature.</li>
+    <li><strong>Per-seat pricing.</strong> Pro at $16.99/mo, Business at $30/seat. Solo operators and small teams find it pricey.</li>
+    <li><strong>Language coverage.</strong> Otter is excellent for US English. For Russian, Kazakh, Spanish, French, German — Whisper (what Itog uses) typically outperforms Otter.</li>
+    <li><strong>Cloud-only.</strong> No fully-offline mode. If you're in a SCIF, on a plane, or in a region with shaky internet, Otter doesn't work.</li>
+  </ol>
+
+  <h2>Itog vs Otter — feature comparison</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>What matters</th>
+        <th>Itog</th>
+        <th>Otter</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>On-device transcription</strong></td>
+        <td>✓ WhisperKit, Apple Neural Engine</td>
+        <td>✗ Cloud only</td>
+      </tr>
+      <tr>
+        <td><strong>No bot in your call</strong></td>
+        <td>✓ System audio via ScreenCaptureKit</td>
+        <td>✗ Otter Pilot joins as participant</td>
+      </tr>
+      <tr>
+        <td><strong>Works offline</strong></td>
+        <td>✓ With local Ollama for summary</td>
+        <td>✗ Internet required</td>
+      </tr>
+      <tr>
+        <td><strong>Choose your AI provider</strong></td>
+        <td>✓ Claude, OpenAI, OpenRouter, Ollama</td>
+        <td>✗ Built-in only</td>
+      </tr>
+      <tr>
+        <td><strong>Audio stored where</strong></td>
+        <td>Your Mac (sandboxed)</td>
+        <td>Otter servers (US-based)</td>
+      </tr>
+      <tr>
+        <td><strong>Languages — strong</strong></td>
+        <td>English, Russian, German, Spanish, French, 90+ more</td>
+        <td>English (primary), Spanish, French</td>
+      </tr>
+      <tr>
+        <td><strong>Real-time captions during call</strong></td>
+        <td>Not the focus (summary after)</td>
+        <td>✓ Live captions in-meeting</td>
+      </tr>
+      <tr>
+        <td><strong>Speaker diarization</strong></td>
+        <td>✓ On-device</td>
+        <td>✓ Cloud</td>
+      </tr>
+      <tr>
+        <td><strong>Sales / CRM integrations</strong></td>
+        <td>—</td>
+        <td>✓ Salesforce, HubSpot, native</td>
+      </tr>
+      <tr>
+        <td><strong>Export — Notion / Telegram / .md</strong></td>
+        <td>✓ All three</td>
+        <td>Slack, Notion, Asana, Jira via integrations</td>
+      </tr>
+      <tr>
+        <td><strong>In-person meeting capture</strong></td>
+        <td>✓ MacBook mic + Whisper offline</td>
+        <td>Mobile app only (limited)</td>
+      </tr>
+      <tr>
+        <td><strong>Platforms</strong></td>
+        <td>Mac (M1+, macOS 14+)</td>
+        <td>Web, Mac, iOS, Android, Chrome ext.</td>
+      </tr>
+      <tr>
+        <td><strong>Pricing — paid plan</strong></td>
+        <td>$5.99/mo (+ optional LLM cost)</td>
+        <td>$16.99/mo (Pro)</td>
+      </tr>
+      <tr>
+        <td><strong>Free tier</strong></td>
+        <td>3 meetings/month, 7-day history</td>
+        <td>300 monthly minutes, 30-min limit per call</td>
+      </tr>
+      <tr>
+        <td><strong>Team plans</strong></td>
+        <td>Not yet</td>
+        <td>✓ Business $30/seat, Enterprise custom</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>The "bot in the call" thing — why it actually matters</h2>
+  <p>Otter Pilot is a feature, not a bug — for many teams it works fine, everyone consents, and the in-meeting captions are useful. But there's a class of conversations where a third party showing up changes the dynamic:</p>
+  <ul>
+    <li><strong>Sales discovery calls</strong> with a prospect who isn't yet a client. They see "Otter is recording" before you've established trust. Some hang up.</li>
+    <li><strong>Diligence and investor calls</strong> where information is material and limited to named participants.</li>
+    <li><strong>Therapy, coaching, medical, legal consultations</strong> where a recording bot is incompatible with the relationship.</li>
+    <li><strong>Internal politics-laden conversations</strong> where "we're being recorded" changes what gets said.</li>
+    <li><strong>Conversations with people who already hate Otter</strong>. There's a small but real cohort that asks for Otter to leave.</li>
+  </ul>
+  <p>Itog avoids the question entirely. It records your Mac's system audio. From the meeting's perspective, you're just listening with headphones. No icon, no notification, no consent banner that triggers explanations.</p>
+  <p><strong>One caveat</strong>: this means consent and disclosure are <em>your</em> responsibility. Local laws vary. Two-party-consent jurisdictions (California, parts of EU) require you to inform participants you're recording. Itog doesn't do this for you.</p>
+
+  <h2>What "local" actually means in Itog</h2>
+
+  <h3>Stays on your Mac (always)</h3>
+  <ul>
+    <li><strong>Audio (WAV).</strong> Captured locally, stored in <code>~/Library/Containers/com.tima.itog/</code>.</li>
+    <li><strong>Transcript.</strong> Whisper <code>large-v3-turbo</code> runs on the Apple Neural Engine. Zero network traffic during transcription.</li>
+    <li><strong>Speaker diarization.</strong> Local.</li>
+    <li><strong>API keys.</strong> In <code>UserDefaults</code> on your machine.</li>
+  </ul>
+
+  <h3>Leaves your Mac (only if you opt in)</h3>
+  <ul>
+    <li><strong>Transcript text to LLM</strong> (not audio) when you pick Claude / OpenAI / OpenRouter. With Ollama, even text stays local.</li>
+    <li><strong>Export to Notion / Telegram</strong> on your explicit click.</li>
+    <li><strong>iCloud sync.</strong> Optional, off by default.</li>
+  </ul>
+
+  <p>Otter's model is fundamentally different — every meeting goes through their pipeline. Both work; one is built around team-level shared transcripts, the other around individual-level data sovereignty.</p>
+
+  <h2>Pricing — side by side</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Plan</th>
+        <th>Itog</th>
+        <th>Otter</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Free tier</strong></td>
+        <td>3 meetings/month, 7-day history</td>
+        <td>300 min/month, 30-min cap per call</td>
+      </tr>
+      <tr>
+        <td><strong>Paid — individual</strong></td>
+        <td>$5.99/month (Pro)</td>
+        <td>$16.99/month (Pro)</td>
+      </tr>
+      <tr>
+        <td><strong>Paid — business</strong></td>
+        <td>—</td>
+        <td>$30/seat/month</td>
+      </tr>
+      <tr>
+        <td><strong>Enterprise</strong></td>
+        <td>—</td>
+        <td>Custom</td>
+      </tr>
+      <tr>
+        <td><strong>Trial</strong></td>
+        <td>7 days free</td>
+        <td>Free tier (no formal trial)</td>
+      </tr>
+      <tr>
+        <td><strong>LLM cost</strong></td>
+        <td>Your own key, $2-5/mo typical</td>
+        <td>Included</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Net: with cloud LLM, Itog ≈ $8-11/month vs Otter $16.99. With Ollama (local), Itog is $5.99/month flat. Otter wins on team features and CRM; Itog wins on per-user privacy and pricing.</p>
+
+  <h2>Migrating from Otter</h2>
+  <ol>
+    <li><strong>Export your existing transcripts from Otter.</strong> Otter supports bulk export to .txt and .docx. Save what you'll want to reference later.</li>
+    <li><strong>Run both in parallel for a week.</strong> On the same meetings, compare summary quality and transcript accuracy. (You'll have an Otter Pilot in the call during this period — disclose that to participants.)</li>
+    <li><strong>Switch fully once you trust Itog.</strong> All new meetings stay on your Mac.</li>
+    <li><strong>Cancel Otter</strong> when you stop opening it.</li>
+  </ol>
+
+  <h2>When Otter is the right call</h2>
+  <p>To be fair: there are workflows where Otter genuinely beats Itog today.</p>
+  <ul>
+    <li><strong>Sales orgs with Salesforce / HubSpot.</strong> Otter for Sales has built-in CRM sync that Itog doesn't replicate.</li>
+    <li><strong>Real-time captioning needed during the call.</strong> Live captions for hearing-impaired participants, or for non-native speakers — Otter is built for this. Itog is summary-after.</li>
+    <li><strong>Team libraries with shared search.</strong> If 20 people need to search across each other's meeting transcripts, Otter's cloud-shared model is the right shape.</li>
+    <li><strong>Cross-platform mandatory.</strong> Web, iOS, Android, Chrome extension — Otter has all of them. Itog is Mac-only.</li>
+  </ul>
+  <p>If any of those is critical to your workflow — stay on Otter. If none are, Itog is likely a better fit at a lower price with stronger privacy.</p>
+
+  <h2>Frequently asked questions</h2>
+
+  <details>
+    <summary><strong>Does Itog send a bot to my meeting like Otter Pilot?</strong></summary>
+    <p>No. Otter Pilot is a visible participant in Zoom/Meet/Teams — others see "Otter is recording." Itog captures system audio silently via ScreenCaptureKit on your Mac. No participant icons, no notification, no awkward "why is Otter here" questions.</p>
+  </details>
+
+  <details>
+    <summary><strong>Is Otter's transcription more accurate than Whisper in Itog?</strong></summary>
+    <p>On English, both are competitive: Otter ~5% WER, Itog with Whisper large-v3-turbo ~5-8% WER on clean audio. On Russian, Spanish, French, German — Whisper is often better than Otter. Otter is strongest on US English with native speakers.</p>
+  </details>
+
+  <details>
+    <summary><strong>Can I use Itog for sales calls like Otter for Sales?</strong></summary>
+    <p>Itog gives you a structured summary with decisions and action items per meeting, exportable to Notion or Telegram. It doesn't have CRM integrations (Salesforce, HubSpot) or sales-specific scoring like Otter's Sales tier. For a solo seller or a small team that lives in Notion — Itog covers the workflow. For 50-seat sales orgs with Salesforce integration — Otter is purpose-built for that.</p>
+  </details>
+
+  <details>
+    <summary><strong>What about pricing — Otter is $16.99/mo, Itog is $5.99/mo. Catch?</strong></summary>
+    <p>Otter's price includes their cloud transcription, summary, storage, and team features. Itog's $5.99 includes local transcription and the app — for the AI summary you bring your own Claude/OpenAI key (typical solo usage: $2-5/month) or run Ollama free locally. So the real comparison is Otter $16.99 vs Itog $8-11 with cloud LLM, or $5.99 with local Ollama.</p>
+  </details>
+
+  <details>
+    <summary><strong>Does Itog work with Zoom, Google Meet, Microsoft Teams?</strong></summary>
+    <p>Yes — Itog captures system audio, so any meeting app on your Mac works: Zoom, Google Meet, Microsoft Teams, Webex, Telegram calls, Discord, FaceTime. No per-platform integration needed. Also works for in-person meetings via the MacBook microphone.</p>
+  </details>
+
+  <details>
+    <summary><strong>Can Itog replace Otter for an entire sales team?</strong></summary>
+    <p>Not yet. Itog targets individual users and small teams today. No admin console, no shared meeting library, no per-seat billing, no Salesforce/HubSpot. If your bottleneck is team-level collaboration, Otter is still the right tool.</p>
+  </details>
+
+  <details>
+    <summary><strong>What if I rely on Otter's real-time captions during calls?</strong></summary>
+    <p>Itog is built for the summary-after workflow, not live captioning. If you depend on live captions — for accessibility, for non-native speakers, or just to follow fast conversations — Otter or Microsoft Teams' built-in captions remain better fits.</p>
+  </details>
+
+  <h2>Try Itog</h2>
+  <p>Free for 3 meetings per month, no sign-up required. Pro is $5.99/month with a 7-day trial. macOS 14+ on Apple Silicon.</p>
+  <p>
+    <a href="/#pricing" class="btn lime">
+      <span>Try Itog free</span>
+      <svg class="arr" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 6h6M6.5 3.5L9 6l-2.5 2.5"/></svg>
+    </a>
+    &nbsp;
+    <a href="/#compare" class="btn ghost">
+      <span>See full comparison</span>
+    </a>
+  </p>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a href="/" class="brand">
+          <span class="brand-mark">i</span>
+          <span>Itog</span>
+        </a>
+        <p>Meeting notes manager for macOS. Local transcription, no bot in your call, works offline.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <a href="/#why">Features</a>
+        <a href="/#how">How it works</a>
+        <a href="/#compare">Compare</a>
+        <a href="/#pricing">Pricing</a>
+      </div>
+      <div>
+        <h5>Alternatives</h5>
+        <a href="/alternatives/granola">vs Granola</a>
+        <a href="/alternatives/otter">vs Otter.ai</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/support">Support</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Itog · made in 🇰🇿</span>
+      <span>WhisperKit · ScreenCaptureKit · SwiftUI</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
