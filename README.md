@@ -46,12 +46,7 @@ Cloudflare Pages автодеплоит при push в `master`:
 - **Build output directory**: `/`
 - **Custom domain**: `itogapp.com` (DNS в Cloudflare)
 
-После апрува App Store нужно:
-
-1. Открыть `index.html`, найти `id="app-store-cta"`.
-2. Заменить `href="#"` на реальную App Store ссылку.
-3. Удалить `aria-disabled="true"` (с обеих кнопок «Скачать» и «Начать триал»).
-4. Опционально: убрать `.hero-cta-note` с подписью «Скоро в Mac App Store».
+App Store ссылка: https://apps.apple.com/app/itog/id6767314441 (live с 2026-05-24, апрувнуто). Обе CTA в `index.html` (`id="app-store-cta"` в hero + кнопка в `#pricing`) уже ведут туда.
 
 ## Контакт
 
